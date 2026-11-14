@@ -1,0 +1,22 @@
+# Single source of truth for the vision part of the project.
+# Every script reads this file, so change things here, not in the scripts.
+
+# The animals you want to detect. The ORDER matters: the position in this list
+# is the class id written in the label files. Add new classes at the END;
+# reordering or removing one means re-labelling.
+# These are placeholders that match the example images - replace with yours,
+# e.g. [fox, heron, cat, marten, deer].
+classes:
+  - bird
+  - cat
+  - dog
+
+# Image size used for training AND on the UNO Q. Smaller = faster, less accurate.
+# 320 is a good start on the UNO Q; try 416 if animals are small in the frame.
+imgsz: 320
+
+# Starting weights for fine-tuning (downloaded automatically).
+base_model: yolo26n.pt
+
+# Where the trained model ends up. detector.py loads this by default.
+model_path: models/animals_ncnn_model

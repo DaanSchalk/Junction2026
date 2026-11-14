@@ -1,0 +1,13 @@
+# photos and generated data (share images via a drive; labels stay in git)
+data/raw/images/*
+!data/raw/images/.gitkeep
+data/raw/preview/
+data/dataset/
+runs/
+
+# downloaded weights / text encoder
+/*.pt
+/*.ts
+
+__pycache__/
+.venv/

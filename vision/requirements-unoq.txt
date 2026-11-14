@@ -1,0 +1,5 @@
+# Running the detector on the Arduino UNO Q (Debian, aarch64)
+ultralytics>=8.4.0
+opencv-python-headless
+pyyaml
+ncnn
