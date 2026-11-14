@@ -11,6 +11,8 @@ which is useful background). Images without a label file are treated as
 
 Whole bursts go to either train or val, never split up, because frames of one
 burst are almost identical and would make validation look better than it is.
+Validation bursts are picked per animal (and per "no animal"), so even a small
+dataset is tested on every class.
 
   python split_dataset.py              # 80/20 split
   python split_dataset.py --val 0.15
@@ -43,18 +45,31 @@ def main():
     groups = defaultdict(list)
     for p in labelled:
         groups[burst_id(p)].append(p)
-    keys = sorted(groups)
-    if len(keys) < 2:
+    if len(groups) < 2:
         raise SystemExit("Need photos from at least 2 bursts to make a train and a val set.")
-    random.Random(args.seed).shuffle(keys)
 
-    val_target = max(1, round(len(labelled) * args.val))
-    split, n_val = {}, 0
-    for k in keys:
-        to_val = n_val < val_target
-        for p in groups[k]:
-            split[p] = "val" if to_val else "train"
-        n_val += len(groups[k]) if to_val else 0
+    def burst_class(paths) -> str:
+        """The animal a burst shows (its most common label), or 'background' if it shows none."""
+        ids = Counter(int(r.split()[0]) for p in paths
+                      for r in (RAW_LABELS / f"{p.stem}.txt").read_text().splitlines() if r.strip())
+        cid = ids.most_common(1)[0][0] if ids else None
+        return "background" if cid is None else classes[cid] if cid < len(classes) else f"class {cid}"
+
+    by_class = defaultdict(list)
+    for k in sorted(groups):
+        by_class[burst_class(groups[k])].append(k)
+
+    # Per class: hold out a share of its bursts, at least one when it has two or more.
+    rng = random.Random(args.seed)
+    val_bursts = set()
+    for name in sorted(by_class):
+        keys = by_class[name]
+        rng.shuffle(keys)
+        if len(keys) < 2:
+            print(f"Warning: only one burst of '{name}', so it can't be validated. Take more photos of it.")
+            continue
+        val_bursts.update(keys[:max(1, round(len(keys) * args.val))])
+    split = {p: "val" if k in val_bursts else "train" for k in groups for p in groups[k]}
 
     if DATASET.exists():
         shutil.rmtree(DATASET)

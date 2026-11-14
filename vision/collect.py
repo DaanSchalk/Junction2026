@@ -243,7 +243,7 @@ def create_app(camera: Camera) -> Flask:
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--camera", default="0", help="camera index, /dev/videoN or a video file")
+    ap.add_argument("--camera", default="1", help="camera index, /dev/videoN or a video file")
     ap.add_argument("--width", type=int, default=1280)
     ap.add_argument("--height", type=int, default=720)
     ap.add_argument("--host", default="0.0.0.0", help="0.0.0.0 = reachable from other devices on the network")
