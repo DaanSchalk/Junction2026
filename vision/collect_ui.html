@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mini dataset collector</title>
+<style>
+  :root { --bg:#f6f6f4; --card:#fff; --ink:#1d1d1b; --muted:#6b6b66; --line:#deded9; --accent:#1f6feb; --ok:#1a7f37; --warn:#c2410c; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.4 system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:12px 20px; border-bottom:1px solid var(--line); background:var(--card); display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  h1 { font-size:17px; margin:0 12px 0 0; }
+  main { display:grid; grid-template-columns:minmax(320px, 640px) 1fr; gap:20px; padding:20px; }
+  @media (max-width: 900px) { main { grid-template-columns:1fr; } }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; }
+  #live { width:100%; border-radius:6px; background:#000; display:block; }
+  .animals { display:flex; gap:8px; flex-wrap:wrap; }
+  .animal { border:1px solid var(--line); background:var(--card); border-radius:8px; padding:8px 12px; cursor:pointer; font-size:15px; }
+  .animal.sel { border-color:var(--accent); background:var(--accent); color:#fff; }
+  .animal small { opacity:.75; margin-left:6px; }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+  button.big { font-size:17px; padding:12px 22px; border:0; border-radius:8px; background:var(--accent); color:#fff; cursor:pointer; }
+  button.big:disabled { opacity:.5; }
+  button.sec { padding:9px 14px; border:1px solid var(--line); border-radius:8px; background:var(--card); cursor:pointer; }
+  select, input { padding:7px; border:1px solid var(--line); border-radius:6px; font:inherit; }
+  .hint { color:var(--muted); font-size:13px; }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--warn); margin-right:5px; }
+  .dot.on { background:var(--ok); }
+  #grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(230px, 1fr)); gap:12px; margin-top:10px; }
+  .card { border:2px solid var(--line); border-radius:8px; padding:6px; background:var(--card); }
+  .card.missing { border-color:var(--warn); }
+  .card canvas { width:100%; display:block; border-radius:4px; cursor:crosshair; touch-action:none; }
+  .card .meta { display:flex; justify-content:space-between; align-items:center; margin-top:5px; gap:6px; font-size:13px; }
+  .card .meta button { padding:4px 8px; font-size:12px; }
+  .tag { font-weight:600; }
+  .tag.missing { color:var(--warn); }
+  #msg { min-height:20px; font-size:14px; }
+  kbd { border:1px solid var(--line); border-bottom-width:2px; border-radius:4px; padding:0 5px; font-size:12px; background:#fff; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Mini dataset collector</h1>
+  <div class="animals" id="animals"></div>
+  <span class="hint" id="totals"></span>
+</header>
+
+<main>
+  <section class="panel">
+    <img id="live" src="/stream" alt="live camera">
+    <div class="row">
+      <button class="big" id="capture">Capture</button>
+      <button class="sec" id="bg"><span class="dot" id="bgdot"></span>Set empty background</button>
+      <label class="hint">frames <select id="frames"><option>1</option><option selected>3</option><option>5</option></select></label>
+      <label class="hint">gap s <input id="gap" type="number" value="0.4" step="0.1" min="0" max="5" style="width:64px"></label>
+    </div>
+    <div id="msg" class="row"></div>
+    <p class="hint">
+      <kbd>1</kbd>–<kbd id="lastkey">4</kbd> pick mini · <kbd>0</kbd> empty scene · <kbd>Space</kbd> capture · <kbd>B</kbd> background<br>
+      Clear the scene → set background → place one mini, hands out of view → capture. Move or rotate it, and repeat.
+      Aim for 50+ photos per mini, from different spots, angles and distances, plus some empty scenes.
+      Re-set the background when the light changes.
+    </p>
+  </section>
+
+  <section class="panel">
+    <strong>Recent photos</strong>
+    <span class="hint">: drag on a photo to draw a new box · red = no box yet</span>
+    <div id="grid"></div>
+  </section>
+</main>
+
+<script>
+let CLASSES = [], EMPTY = "empty", selected = null, busy = false;
+const $ = (id) => document.getElementById(id);
+
+async function api(path, body) {
+  const r = await fetch(path, body === undefined ? {} : {
+    method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});
+  if (!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+function say(text, isError) { $("msg").textContent = text; $("msg").style.color = isError ? "var(--warn)" : ""; }
+
+function renderAnimals(stats) {
+  const box = $("animals");
+  box.innerHTML = "";
+  [...CLASSES, EMPTY].forEach((name, i) => {
+    const b = document.createElement("button");
+    b.className = "animal" + (name === selected ? " sel" : "");
+    const key = name === EMPTY ? 0 : i + 1;
+    b.innerHTML = `${key}&nbsp; ${name === EMPTY ? "empty scene" : name}<small>${stats ? stats[name] : ""}</small>`;
+    b.onclick = () => { selected = name; renderAnimals(stats); };
+    box.appendChild(b);
+  });
+  if (stats) $("totals").textContent = stats.unlabelled ? `${stats.unlabelled} photo(s) still need a box` : "";
+}
+async function refreshStats() { renderAnimals(await api("/api/stats")); }
+
+// The intended animal is in the file name: "fox-20261114-..._b0001_f0"
+const wantedOf = (name) => name.replace(/-\d{8}-\d{6}_b\d+_f\d+$/, "");
+
+function drawCard(card, item, img) {
+  const cv = card.querySelector("canvas"), ctx = cv.getContext("2d");
+  ctx.drawImage(img, 0, 0, cv.width, cv.height);
+  if (item.box) {
+    const [x1, y1, x2, y2] = item.box;
+    ctx.lineWidth = Math.max(2, cv.width / 200);
+    ctx.strokeStyle = "#00e676";
+    ctx.strokeRect(x1 * cv.width, y1 * cv.height, (x2 - x1) * cv.width, (y2 - y1) * cv.height);
+  }
+  const missing = item.animal === null;
+  card.classList.toggle("missing", missing);
+  const tag = card.querySelector(".tag");
+  tag.className = "tag" + (missing ? " missing" : "");
+  tag.textContent = missing ? `${wantedOf(item.name)}: draw a box` : item.animal === EMPTY ? "no animal" : item.animal;
+}
+
+function makeCard(item) {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `<canvas></canvas>
+    <div class="meta"><span class="tag"></span>
+      <span><button class="sec none">no animal</button> <button class="sec del">delete</button></span></div>`;
+  const cv = card.querySelector("canvas");
+  const img = new Image();
+  img.onload = () => { cv.width = img.naturalWidth; cv.height = img.naturalHeight; drawCard(card, item, img); };
+  img.src = `/api/image/${encodeURIComponent(item.name)}?t=${Date.now()}`;
+
+  // drag to draw a new box
+  let start = null;
+  const pos = (e) => { const r = cv.getBoundingClientRect();
+    return [Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1), Math.min(Math.max((e.clientY - r.top) / r.height, 0), 1)]; };
+  cv.addEventListener("pointerdown", (e) => { start = pos(e); cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener("pointermove", (e) => {
+    if (!start) return;
+    const [x, y] = pos(e);
+    drawCard(card, {...item, box: [Math.min(start[0], x), Math.min(start[1], y), Math.max(start[0], x), Math.max(start[1], y)]}, img);
+  });
+  cv.addEventListener("pointerup", async (e) => {
+    if (!start) return;
+    const [x, y] = pos(e), s = start; start = null;
+    const box = [Math.min(s[0], x), Math.min(s[1], y), Math.max(s[0], x), Math.max(s[1], y)];
+    if ((box[2] - box[0]) < 0.01 || (box[3] - box[1]) < 0.01) { drawCard(card, item, img); return; }  // just a click
+    let animal = wantedOf(item.name);
+    if (!CLASSES.includes(animal)) animal = selected && selected !== EMPTY ? selected : null;
+    if (!animal) { say("Pick a mini first, then draw the box.", true); drawCard(card, item, img); return; }
+    item = await api("/api/label", {name: item.name, animal, box});
+    drawCard(card, item, img); refreshStats();
+  });
+  card.querySelector(".none").onclick = async () => {
+    item = await api("/api/label", {name: item.name, animal: EMPTY, box: null}); drawCard(card, item, img); refreshStats(); };
+  card.querySelector(".del").onclick = async () => {
+    await api("/api/delete", {name: item.name}); card.remove(); refreshStats(); };
+  return card;
+}
+
+async function refreshGrid() {
+  const {images} = await api("/api/recent?n=18");
+  const grid = $("grid"); grid.innerHTML = "";
+  images.forEach((it) => grid.appendChild(makeCard(it)));
+}
+
+async function capture() {
+  if (busy) return;
+  if (!selected) { say("Pick a mini (or 'empty scene') first.", true); return; }
+  busy = true; $("capture").disabled = true; say("Capturing…");
+  try {
+    const {images} = await api("/api/capture", {animal: selected, frames: +$("frames").value, gap: +$("gap").value});
+    const missing = images.filter((i) => i.animal === null).length;
+    say(`Saved ${images.length} photo(s) of ${selected}` +
+        (missing ? `: ${missing} without a box. ` + (bgSet
+          ? "The scene changed in more than one place (hand in view? background not empty? light changed?). Drag a box on the red photos, or re-set the background."
+          : "Set the empty background first, or drag a box on the red photos.") : "."), missing > 0);
+    await refreshGrid(); await refreshStats();
+  } catch (e) { say("Capture failed: " + e.message, true); }
+  busy = false; $("capture").disabled = false;
+}
+
+let bgSet = false;
+async function setBackground() {
+  await api("/api/background", {});
+  bgSet = true; $("bgdot").classList.add("on"); say("Background set. Now place a mini and capture.");
+}
+
+document.addEventListener("keydown", (e) => {
+  if (["INPUT", "SELECT"].includes(document.activeElement.tagName)) return;
+  if (e.code === "Space") { e.preventDefault(); capture(); }
+  else if (e.key === "b" || e.key === "B") setBackground();
+  else if (e.key === "0") { selected = EMPTY; refreshStats(); }
+  else if (/^[1-9]$/.test(e.key) && +e.key <= CLASSES.length) { selected = CLASSES[+e.key - 1]; refreshStats(); }
+});
+$("capture").onclick = capture;
+$("bg").onclick = setBackground;
+
+(async () => {
+  const cfg = await api("/api/config");
+  CLASSES = cfg.classes; EMPTY = cfg.empty; bgSet = cfg.has_background;
+  $("bgdot").classList.toggle("on", bgSet);
+  $("lastkey").textContent = CLASSES.length;
+  await refreshStats(); await refreshGrid();
+})();
+</script>
+</body>
+</html>
