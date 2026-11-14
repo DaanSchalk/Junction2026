@@ -10,7 +10,7 @@ classes:
   - fox
   - bear
   - wolf
-  - moose
+  - deer
 
 # Image size used for training AND on the UNO Q. Smaller = faster, less accurate.
 # 320 is a good start on the UNO Q; try 416 if animals are small in the frame.
