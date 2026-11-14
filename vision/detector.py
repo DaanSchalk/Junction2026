@@ -161,3 +161,4 @@ class AnimalDetector:
         else:
             approach = "unknown"
         return Animal(name, conf, len(seen), direction, approach, round(dx, 2), round(dy, 2), track)
+
