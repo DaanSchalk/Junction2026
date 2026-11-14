@@ -120,6 +120,9 @@ Adding a class: append it to the END of `classes:`, label it, and retrain.
 
 ## Using it in your own code
 
+The full loop (look, decide, respond, keep checking, log, learn) lives one folder up in
+`run.py`; this is the part it uses.
+
 Put your script in this folder (or add `vision/` to `PYTHONPATH`; in PyCharm,
 right-click → *Mark Directory as → Sources Root*).
 
@@ -135,6 +138,7 @@ for a in det.analyze_burst(frames):
     # a.direction: left / right / up / down / still / unknown   (as seen in the picture)
     # a.approach:  approaching / leaving / same / unknown        (box getting bigger/smaller)
     # a.dx, a.dy:  movement in body lengths; a.boxes: per-frame Detection or None
+    # a.position:  where it was last seen across the view (0 = left edge, 1 = right edge)
 
 # after the deterrent: take a few more frames
 if det.is_gone(after_frames):   # True when the last 2 frames contain no animal

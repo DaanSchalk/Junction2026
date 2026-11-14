@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# model weights downloaded by ultralytics when you run e.g. --model yolo26n.pt
+/*.pt

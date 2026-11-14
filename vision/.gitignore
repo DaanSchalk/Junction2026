@@ -11,3 +11,6 @@ runs/
 
 __pycache__/
 .venv/
+
+# photos saved by run.py for each encounter (future training data; share via a drive)
+data/encounters/

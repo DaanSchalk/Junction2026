@@ -1,201 +1,301 @@
-animal,confidence,direction_before,approach_before,dx_before,deterrent,direction_after,approach_after,gone,seconds_until_gone,temperature_c,model,id,timestamp,toward_critical_area,turned_around,n_images
-fox,0.722,left,leaving,-1.52,sound,right,leaving,True,2.4,-1.1,animals_ncnn_model (mock),ab270cb78a00,2026-10-31T23:07:36+00:00,False,False,7
-fox,0.928,right,approaching,1.1,light,still,same,False,,-0.6,animals_ncnn_model (mock),cb531ada81b0,2026-10-31T23:11:03+00:00,True,False,7
-deer,0.7,left,same,-1.52,none,still,same,False,,-5.7,animals_ncnn_model (mock),767198142612,2026-10-31T23:15:01+00:00,False,False,7
-fox,0.72,right,same,0.87,sound,left,leaving,True,0.8,-2.2,animals_ncnn_model (mock),6a9619350059,2026-11-01T00:13:11+00:00,True,True,7
-wolf,0.761,still,approaching,-0.13,light,left,leaving,True,1.2,-2.2,animals_ncnn_model (mock),2d4d77bb3654,2026-11-01T00:33:13+00:00,False,False,7
-wolf,0.623,left,approaching,-1.39,sound,right,leaving,True,1.3,-4.4,animals_ncnn_model (mock),f7eb358ce418,2026-11-01T01:12:55+00:00,False,False,7
-wolf,0.843,down,same,-0.01,sound,down,same,True,2.2,-2.7,animals_ncnn_model (mock),911e4991714e,2026-11-01T04:03:33+00:00,False,False,7
-wolf,0.667,right,same,0.99,sound,unknown,same,True,1.3,-1.3,animals_ncnn_model (mock),5c2646e8272f,2026-11-01T04:20:31+00:00,True,False,7
-fox,0.41,left,leaving,-1.25,sound,left,same,False,,-3.6,animals_ncnn_model (mock),f972226d599c,2026-11-01T05:11:55+00:00,False,False,7
-deer,0.82,up,approaching,0.02,sound,down,same,True,0.7,-2.4,animals_ncnn_model (mock),4cf7076d2d32,2026-11-01T18:55:02+00:00,False,False,7
-bear,0.745,left,same,-1.55,light,right,leaving,True,1.6,-0.5,animals_ncnn_model (mock),8a894b983f0b,2026-11-01T21:24:34+00:00,False,False,7
-fox,0.692,left,approaching,-0.77,sound,right,leaving,True,2.2,-3.8,animals_ncnn_model (mock),b7bc6664a080,2026-11-01T21:40:02+00:00,False,False,7
-wolf,0.762,left,approaching,-0.69,none,left,same,False,,0.2,animals_ncnn_model (mock),a7253ec48ea8,2026-11-01T22:28:08+00:00,False,False,7
-bear,0.889,still,same,0.1,none,still,same,False,,-1.8,animals_ncnn_model (mock),5c8456fd343b,2026-11-01T22:50:35+00:00,False,False,7
-fox,0.713,right,same,1.46,sound,still,same,False,,-1.8,animals_ncnn_model (mock),5239f509facc,2026-11-02T01:36:17+00:00,True,False,7
-wolf,0.873,right,approaching,1.19,sound,right,same,True,2.0,-2.9,animals_ncnn_model (mock),eb4610817591,2026-11-02T02:15:04+00:00,True,False,7
-deer,0.816,right,approaching,1.41,none,still,same,False,,-5.8,animals_ncnn_model (mock),691513683df3,2026-11-02T03:34:33+00:00,True,False,7
-fox,0.818,right,approaching,1.03,none,right,same,False,,-3.3,animals_ncnn_model (mock),075f4d5fad71,2026-11-02T04:26:20+00:00,True,False,7
-wolf,0.801,still,leaving,-0.03,none,still,same,False,,-6.4,animals_ncnn_model (mock),1919d11745ad,2026-11-02T04:32:41+00:00,False,False,7
-wolf,0.959,right,same,0.33,light,left,leaving,True,1.2,-0.4,animals_ncnn_model (mock),34fd850567c2,2026-11-02T05:04:03+00:00,True,True,7
-fox,0.848,right,approaching,0.77,none,left,same,True,8.0,-7.1,animals_ncnn_model (mock),b80239f0dffd,2026-11-02T05:37:41+00:00,True,True,7
-fox,0.811,left,same,-0.5,sound,right,leaving,True,0.9,-4.0,animals_ncnn_model (mock),1ea38554017b,2026-11-02T05:41:51+00:00,False,False,7
-deer,0.705,right,approaching,1.53,light,left,leaving,True,1.7,-2.2,animals_ncnn_model (mock),9dd4b7cf0a7c,2026-11-02T06:19:34+00:00,True,True,7
-deer,0.892,right,approaching,1.02,sound,left,leaving,True,0.9,-3.0,animals_ncnn_model (mock),bbe953f6460f,2026-11-02T12:48:47+00:00,True,True,7
-deer,0.751,still,approaching,0.19,sound,right,same,True,1.0,-1.6,animals_ncnn_model (mock),7e41db74d2f6,2026-11-02T14:15:53+00:00,False,False,7
-fox,0.771,left,same,-1.52,sound,still,same,False,,-2.6,animals_ncnn_model (mock),ec7732326628,2026-11-02T14:17:31+00:00,False,False,7
-deer,0.902,right,approaching,1.25,none,right,same,False,,-0.3,animals_ncnn_model (mock),c50cf655f7c1,2026-11-02T14:37:36+00:00,True,False,7
-deer,0.744,right,leaving,0.68,light,left,leaving,True,1.9,-3.6,animals_ncnn_model (mock),b1e87987e935,2026-11-02T14:43:45+00:00,True,True,7
-deer,0.9,left,leaving,-1.53,sound,right,same,True,1.1,0.3,animals_ncnn_model (mock),b7cac02928d8,2026-11-02T16:33:55+00:00,False,False,7
-fox,0.699,right,same,0.5,none,right,same,False,,-4.6,animals_ncnn_model (mock),6164e90a0aa7,2026-11-02T17:05:12+00:00,True,False,7
-wolf,0.894,right,same,1.55,sound,left,same,True,2.4,-4.7,animals_ncnn_model (mock),1502d5b3fda8,2026-11-02T17:17:20+00:00,True,True,7
-bear,0.859,left,same,-1.13,none,still,approaching,False,,-6.5,animals_ncnn_model (mock),9fc6d1c29a8f,2026-11-02T21:23:44+00:00,False,False,7
-fox,0.687,right,approaching,0.99,sound,right,approaching,False,,-3.6,animals_ncnn_model (mock),fdc39de94e71,2026-11-02T22:27:23+00:00,True,False,7
-deer,0.769,right,approaching,0.56,light,left,leaving,True,1.3,-1.8,animals_ncnn_model (mock),60c75459bd9c,2026-11-02T23:15:41+00:00,True,True,7
-wolf,0.781,left,approaching,-0.93,none,right,approaching,False,,-4.3,animals_ncnn_model (mock),5e704a265947,2026-11-03T00:02:31+00:00,False,False,7
-deer,0.837,unknown,unknown,0.0,none,left,same,False,,-2.7,animals_ncnn_model (mock),6a1e41cd81b0,2026-11-03T00:03:48+00:00,False,False,7
-fox,0.668,left,same,-0.94,sound,right,same,True,1.9,-7.0,animals_ncnn_model (mock),fb6f2a21d623,2026-11-03T00:28:50+00:00,False,False,7
-deer,0.851,right,same,0.93,none,still,same,False,,-4.2,animals_ncnn_model (mock),167bb6199e01,2026-11-03T01:06:20+00:00,True,False,7
-deer,0.804,right,same,0.89,light,left,same,True,1.2,-3.4,animals_ncnn_model (mock),53d6575055a9,2026-11-03T01:09:08+00:00,True,True,7
-deer,0.681,left,approaching,-1.4,light,left,same,False,,-1.8,animals_ncnn_model (mock),debaddfc2e9b,2026-11-03T02:27:33+00:00,False,False,7
-fox,0.834,right,approaching,1.47,none,left,leaving,True,2.8,-3.6,animals_ncnn_model (mock),53a0c4568a02,2026-11-03T03:19:56+00:00,True,True,7
-deer,0.683,left,approaching,-0.82,sound,still,same,False,,-4.7,animals_ncnn_model (mock),fa7a513c6916,2026-11-03T04:27:18+00:00,False,False,7
-fox,0.663,left,same,-1.53,light,left,same,False,,-7.0,animals_ncnn_model (mock),1360e1919780,2026-11-03T05:36:54+00:00,False,False,7
-deer,0.895,left,approaching,-1.53,light,right,leaving,True,1.4,-1.1,animals_ncnn_model (mock),a3ea6d9b3805,2026-11-03T09:54:58+00:00,False,False,7
-wolf,0.957,left,same,-1.13,light,right,leaving,True,2.0,0.6,animals_ncnn_model (mock),92974e8494fb,2026-11-03T13:00:22+00:00,False,False,7
-deer,0.886,left,approaching,-1.54,sound,left,approaching,False,,-2.0,animals_ncnn_model (mock),9bc771be4d88,2026-11-03T16:37:06+00:00,False,False,7
-deer,0.712,up,same,0.15,none,up,same,False,,,animals_ncnn_model (mock),49432bdf8ee3,2026-11-03T16:57:46+00:00,False,False,7
-deer,0.774,down,approaching,-0.07,none,up,same,True,6.7,-6.8,animals_ncnn_model (mock),e2d9ffcc8542,2026-11-03T21:48:45+00:00,False,False,7
-deer,0.76,left,approaching,-0.93,none,right,leaving,True,2.6,-2.1,animals_ncnn_model (mock),12bf1c4601d7,2026-11-03T21:56:41+00:00,False,False,7
-deer,0.882,right,approaching,1.51,sound,right,approaching,False,,-5.7,animals_ncnn_model (mock),7d31b5afe1c7,2026-11-04T00:39:46+00:00,True,False,7
-deer,0.723,still,approaching,-0.09,sound,unknown,leaving,True,1.2,-6.3,animals_ncnn_model (mock),2c19dca4d4ea,2026-11-04T01:13:07+00:00,False,False,7
-wolf,0.941,still,approaching,0.05,none,still,same,False,,-2.6,animals_ncnn_model (mock),78aca6850952,2026-11-04T04:05:56+00:00,False,False,7
-deer,0.881,left,same,-0.9,none,still,approaching,False,,-6.0,animals_ncnn_model (mock),3c9858afbcb8,2026-11-04T04:57:00+00:00,False,False,7
-deer,0.891,right,same,0.46,none,right,same,False,,1.6,animals_ncnn_model (mock),4d329a2688c3,2026-11-04T07:41:13+00:00,True,False,7
-deer,0.878,left,approaching,-0.72,light,left,approaching,False,,-1.5,animals_ncnn_model (mock),c1ba542a6174,2026-11-04T13:56:34+00:00,False,False,7
-fox,0.859,still,approaching,-0.0,light,still,same,False,,-3.9,animals_ncnn_model (mock),fb1ab408ebb2,2026-11-04T14:48:44+00:00,False,False,7
-deer,0.8,right,approaching,0.74,sound,left,leaving,True,1.5,-4.5,animals_ncnn_model (mock),0221ce1081bc,2026-11-04T16:46:44+00:00,True,True,7
-wolf,0.758,right,approaching,1.16,sound,right,same,True,2.3,-5.1,animals_ncnn_model (mock),8a42f28693f0,2026-11-04T19:19:35+00:00,True,False,7
-deer,0.691,right,same,0.91,none,still,same,False,,-5.1,animals_ncnn_model (mock),8aaa0da006fb,2026-11-04T23:41:04+00:00,True,False,7
-fox,0.733,left,leaving,-1.59,light,right,same,True,2.4,,animals_ncnn_model (mock),47f37757496d,2026-11-04T23:51:25+00:00,False,False,7
-deer,0.702,down,same,-0.15,sound,up,leaving,True,2.4,-4.9,animals_ncnn_model (mock),c07160335f9a,2026-11-05T01:02:17+00:00,False,False,7
-deer,0.97,still,same,-0.06,none,still,approaching,False,,-0.9,animals_ncnn_model (mock),2656c84811e7,2026-11-05T01:12:48+00:00,False,False,7
-bear,0.681,left,same,-0.39,none,left,same,False,,-3.4,animals_ncnn_model (mock),20f7cbd79950,2026-11-05T01:40:59+00:00,False,False,7
-deer,0.97,left,same,-1.47,light,right,same,True,1.8,-3.4,animals_ncnn_model (mock),0c097b40fec6,2026-11-05T01:58:02+00:00,False,False,7
-deer,0.669,left,same,-0.96,none,still,same,False,,-7.0,animals_ncnn_model (mock),56f0a91a562e,2026-11-05T02:03:52+00:00,False,False,7
-fox,0.734,right,same,0.7,sound,left,leaving,True,2.3,-5.5,animals_ncnn_model (mock),5620a937cbcf,2026-11-05T02:59:49+00:00,True,True,7
-bear,0.876,right,same,0.7,sound,left,leaving,True,0.8,-4.5,animals_ncnn_model (mock),b02a290aaec7,2026-11-05T04:26:20+00:00,True,True,7
-bear,0.848,right,same,0.92,light,unknown,same,True,1.6,-2.2,animals_ncnn_model (mock),b452e1dfffe1,2026-11-05T05:24:12+00:00,True,False,7
-deer,0.801,right,approaching,0.94,none,right,same,False,,-7.8,animals_ncnn_model (mock),cc86c1731ebc,2026-11-05T05:59:26+00:00,True,False,7
-bear,0.968,right,approaching,1.33,none,right,same,False,,1.2,animals_ncnn_model (mock),21854c73cb96,2026-11-05T12:58:02+00:00,True,False,7
-fox,0.904,left,leaving,-0.68,none,still,approaching,False,,-10.1,animals_ncnn_model (mock),ccb25ffc9515,2026-11-05T14:08:38+00:00,False,False,7
-deer,0.748,left,approaching,-0.95,none,left,same,False,,-5.1,animals_ncnn_model (mock),e4e7748743d0,2026-11-05T14:20:03+00:00,False,False,7
-fox,0.752,down,approaching,-0.12,sound,down,approaching,False,,-3.1,animals_ncnn_model (mock),f282459a89e2,2026-11-05T14:21:09+00:00,False,False,7
-fox,0.888,up,approaching,-0.09,none,up,same,False,,-6.1,animals_ncnn_model (mock),4eed02d63100,2026-11-05T15:15:04+00:00,False,False,7
-bear,0.783,right,leaving,0.57,light,left,same,True,1.9,-5.3,animals_ncnn_model (mock),fba8f73f7c61,2026-11-05T15:28:59+00:00,True,True,7
-deer,0.82,left,same,-0.36,sound,left,same,True,2.2,-4.6,animals_ncnn_model (mock),58709aff78e1,2026-11-05T15:56:10+00:00,False,False,7
-deer,0.798,left,leaving,-0.79,light,right,leaving,True,1.2,-6.0,animals_ncnn_model (mock),37c630092caf,2026-11-05T19:12:24+00:00,False,False,7
-deer,0.645,still,approaching,0.14,sound,still,same,False,,-6.2,animals_ncnn_model (mock),c586418f12e8,2026-11-05T19:46:26+00:00,False,False,7
-fox,0.599,left,approaching,-1.38,sound,right,leaving,True,1.4,-2.8,animals_ncnn_model (mock),4be378312688,2026-11-05T20:24:40+00:00,False,False,7
-deer,0.803,still,approaching,0.19,none,still,same,False,,-7.9,animals_ncnn_model (mock),6f50119587fa,2026-11-05T23:48:27+00:00,False,False,7
-wolf,0.827,down,leaving,0.15,sound,unknown,leaving,True,1.5,-2.3,animals_ncnn_model (mock),c699454b78f8,2026-11-06T01:35:55+00:00,False,False,7
-deer,0.831,right,approaching,0.42,none,right,approaching,False,,-3.5,animals_ncnn_model (mock),2b3ea7d3f9b9,2026-11-06T03:25:29+00:00,True,False,7
-fox,0.895,right,approaching,1.34,light,left,same,True,2.0,-4.6,animals_ncnn_model (mock),53365ea25b17,2026-11-06T03:51:02+00:00,True,True,7
-fox,0.688,still,same,0.07,none,still,same,False,,-4.5,animals_ncnn_model (mock),e485644b8217,2026-11-06T05:48:18+00:00,False,False,7
-fox,0.744,left,same,-1.4,light,right,same,False,,-4.3,animals_ncnn_model (mock),06f5f6111cf2,2026-11-06T13:28:07+00:00,False,False,7
-bear,0.794,up,approaching,-0.18,light,down,leaving,True,2.0,-4.3,animals_ncnn_model (mock),0d0e38f580cb,2026-11-06T14:22:57+00:00,False,False,7
-fox,0.788,right,same,0.34,light,still,approaching,False,,-8.1,animals_ncnn_model (mock),b167ecb5aa33,2026-11-06T18:20:16+00:00,True,False,7
-fox,0.78,right,same,0.66,light,still,same,False,,-3.1,animals_ncnn_model (mock),6fa1f472bb69,2026-11-06T18:22:35+00:00,True,False,7
-fox,0.807,left,leaving,-0.6,none,right,leaving,True,7.1,-7.4,animals_ncnn_model (mock),d6c7436c251d,2026-11-06T20:31:14+00:00,False,False,7
-fox,0.903,down,leaving,0.18,sound,up,leaving,True,1.5,-5.6,animals_ncnn_model (mock),e0509826c78c,2026-11-06T21:19:13+00:00,False,False,7
-wolf,0.903,left,approaching,-0.77,light,right,leaving,True,1.5,-2.2,animals_ncnn_model (mock),a20f9bc95a25,2026-11-06T22:09:41+00:00,False,False,7
-deer,0.697,down,approaching,-0.02,sound,up,leaving,True,1.6,-8.8,animals_ncnn_model (mock),306d0ffe14f5,2026-11-06T22:25:38+00:00,False,False,7
-bear,0.784,right,approaching,0.75,light,left,leaving,True,1.4,-6.0,animals_ncnn_model (mock),a5841ee0934b,2026-11-06T23:33:51+00:00,True,True,7
-fox,0.765,right,approaching,1.34,none,still,approaching,False,,-4.7,animals_ncnn_model (mock),93b65df6bd28,2026-11-07T02:47:29+00:00,True,False,7
-deer,0.655,up,same,-0.04,sound,up,approaching,False,,-8.1,animals_ncnn_model (mock),4e1e990c82e9,2026-11-07T03:14:14+00:00,False,False,7
-fox,0.794,still,same,0.13,light,still,same,False,,-7.8,animals_ncnn_model (mock),443651edc8e2,2026-11-07T04:12:51+00:00,False,False,7
-deer,0.802,left,same,-1.31,none,right,leaving,True,6.7,-4.5,animals_ncnn_model (mock),f1b8237f0de0,2026-11-07T14:22:26+00:00,False,False,7
-deer,0.836,right,same,0.43,sound,left,same,True,2.2,-1.7,animals_ncnn_model (mock),77d7d35d66a0,2026-11-07T14:30:48+00:00,True,True,7
-fox,0.755,right,leaving,0.37,none,right,same,False,,-4.7,animals_ncnn_model (mock),1e2a43a38f89,2026-11-07T14:48:05+00:00,True,False,7
-deer,0.826,right,approaching,0.55,light,right,same,False,,-5.1,animals_ncnn_model (mock),e0b8adbafed0,2026-11-07T15:29:38+00:00,True,False,7
-fox,0.76,unknown,unknown,0.0,light,still,same,False,,-3.1,animals_ncnn_model (mock),4047cad71eb4,2026-11-07T15:39:29+00:00,False,False,7
-fox,0.819,up,leaving,-0.12,none,down,same,False,,-6.8,animals_ncnn_model (mock),b50f74a00872,2026-11-07T20:46:37+00:00,False,False,7
-deer,0.498,right,approaching,0.35,sound,left,approaching,False,,-4.8,animals_ncnn_model (mock),158a1e29d18f,2026-11-07T21:01:49+00:00,True,True,7
-deer,0.933,right,approaching,0.51,sound,left,leaving,True,1.0,-4.0,animals_ncnn_model (mock),ae06af89c1e3,2026-11-07T21:28:29+00:00,True,True,7
-fox,0.76,left,leaving,-0.81,light,left,same,False,,-8.9,animals_ncnn_model (mock),ccc2c4e70d70,2026-11-07T21:56:07+00:00,False,False,7
-fox,0.764,right,approaching,1.57,sound,still,same,False,,-5.2,animals_ncnn_model (mock),2411751b4c83,2026-11-07T22:57:43+00:00,True,False,7
-wolf,0.81,left,same,-1.17,light,right,leaving,True,2.2,-5.4,animals_ncnn_model (mock),25109ddbdc12,2026-11-07T23:00:01+00:00,False,False,7
-fox,0.438,down,same,-0.1,none,still,approaching,False,,-6.7,animals_ncnn_model (mock),b2aef73e88bb,2026-11-07T23:22:04+00:00,False,False,7
-deer,0.889,left,approaching,-1.44,none,unknown,leaving,True,3.0,-8.0,animals_ncnn_model (mock),d3cf9d18e28f,2026-11-07T23:39:32+00:00,False,False,7
-deer,0.709,right,same,0.53,none,right,same,False,,-4.6,animals_ncnn_model (mock),12917b3654e9,2026-11-08T00:26:53+00:00,True,False,7
-deer,0.837,right,leaving,1.34,sound,right,same,False,,-4.6,animals_ncnn_model (mock),eb662dd9deee,2026-11-08T05:20:33+00:00,True,False,7
-wolf,0.917,right,approaching,0.6,light,still,same,False,,-2.8,animals_ncnn_model (mock),56770c4f086a,2026-11-08T06:02:17+00:00,True,False,7
-deer,0.855,unknown,unknown,0.0,light,right,same,False,,-6.1,animals_ncnn_model (mock),9ca55ff31b4c,2026-11-08T14:12:30+00:00,False,False,7
-deer,0.686,right,same,0.73,light,left,leaving,True,1.5,-2.3,animals_ncnn_model (mock),6661bb6de8f8,2026-11-08T15:21:21+00:00,True,True,7
-deer,0.403,right,same,0.33,sound,left,leaving,True,1.7,-8.1,animals_ncnn_model (mock),bc7aeb951e77,2026-11-08T15:42:36+00:00,True,True,7
-deer,0.8,right,approaching,0.47,sound,right,approaching,False,,-4.2,animals_ncnn_model (mock),fd9eb7e5c0d8,2026-11-08T15:50:03+00:00,True,False,7
-deer,0.97,left,approaching,-1.36,sound,left,approaching,False,,-8.1,animals_ncnn_model (mock),5064573f5156,2026-11-08T16:06:32+00:00,False,False,7
-deer,0.421,down,approaching,-0.16,sound,up,leaving,True,1.0,-3.6,animals_ncnn_model (mock),01c8f3255d45,2026-11-08T16:44:49+00:00,False,False,7
-bear,0.953,right,leaving,0.55,sound,left,leaving,True,0.9,-5.4,animals_ncnn_model (mock),2c7139f34f38,2026-11-08T17:50:44+00:00,True,True,7
-fox,0.878,right,approaching,0.61,light,right,same,False,,-7.3,animals_ncnn_model (mock),1f4687c6b361,2026-11-08T22:13:24+00:00,True,False,7
-fox,0.782,right,approaching,0.52,sound,left,leaving,True,1.8,-5.4,animals_ncnn_model (mock),f2cad18cc035,2026-11-09T00:09:29+00:00,True,True,7
-deer,0.905,left,same,-1.05,light,right,same,True,1.6,-5.0,animals_ncnn_model (mock),fc6d33574a5b,2026-11-09T02:03:20+00:00,False,False,7
-bear,0.768,right,approaching,1.17,light,still,same,False,,-3.4,animals_ncnn_model (mock),f575039e257a,2026-11-09T02:37:08+00:00,True,False,7
-deer,0.807,up,approaching,-0.03,light,up,same,True,0.8,-3.6,animals_ncnn_model (mock),098933bdc975,2026-11-09T02:39:50+00:00,False,False,7
-fox,0.753,right,approaching,0.76,sound,left,leaving,True,2.5,-2.5,animals_ncnn_model (mock),4007cc14139a,2026-11-09T15:05:38+00:00,True,True,7
-bear,0.849,unknown,unknown,0.0,light,left,leaving,True,1.3,-6.7,animals_ncnn_model (mock),f913b11b0ad6,2026-11-09T16:25:52+00:00,False,False,7
-deer,0.75,right,leaving,1.04,sound,left,same,True,1.6,-7.6,animals_ncnn_model (mock),1332449845ca,2026-11-09T19:03:27+00:00,True,True,7
-wolf,0.74,right,approaching,1.01,none,left,leaving,True,2.0,-7.6,animals_ncnn_model (mock),2286f000e394,2026-11-09T20:05:39+00:00,True,True,7
-fox,0.679,left,same,-1.36,light,still,same,False,,-4.9,animals_ncnn_model (mock),f0c10753f9bc,2026-11-09T20:47:22+00:00,False,False,7
-fox,0.829,down,approaching,0.02,sound,still,approaching,False,,-7.1,animals_ncnn_model (mock),907b73d2fd5b,2026-11-09T22:44:42+00:00,False,False,7
-fox,0.821,left,same,-1.34,none,left,same,False,,-2.5,animals_ncnn_model (mock),491b82c87b83,2026-11-10T00:24:40+00:00,False,False,7
-deer,0.858,right,same,1.49,sound,left,leaving,True,1.2,-4.4,animals_ncnn_model (mock),679367773acc,2026-11-10T02:47:33+00:00,True,True,7
-deer,0.801,right,same,1.34,none,right,approaching,False,,-4.9,animals_ncnn_model (mock),15a55fce192e,2026-11-10T05:13:37+00:00,True,False,7
-deer,0.838,left,leaving,-0.65,sound,right,leaving,True,2.0,-2.3,animals_ncnn_model (mock),8fec02f53ca4,2026-11-10T12:49:06+00:00,False,False,7
-bear,0.836,right,same,1.25,light,right,same,False,,-1.8,animals_ncnn_model (mock),457a628a45cc,2026-11-10T14:19:11+00:00,True,False,7
-fox,0.712,right,leaving,0.7,sound,still,approaching,False,,-6.8,animals_ncnn_model (mock),cc81968316c8,2026-11-10T14:47:58+00:00,True,False,7
-deer,0.721,left,approaching,-1.23,none,right,same,True,7.3,-2.8,animals_ncnn_model (mock),50c063880df3,2026-11-10T15:02:55+00:00,False,False,7
-deer,0.652,right,same,0.44,sound,still,same,False,,-7.1,animals_ncnn_model (mock),aee14085a320,2026-11-10T23:35:14+00:00,True,False,7
-deer,0.798,still,leaving,0.1,sound,still,same,False,,-3.3,animals_ncnn_model (mock),de7eda2f6d41,2026-11-10T23:49:39+00:00,False,False,7
-deer,0.817,left,approaching,-1.3,none,unknown,leaving,True,3.2,-3.9,animals_ncnn_model (mock),7a3a80e81aa1,2026-11-11T00:01:31+00:00,False,False,7
-fox,0.816,right,approaching,0.46,sound,right,approaching,False,,-2.5,animals_ncnn_model (mock),e3815d4e4502,2026-11-11T00:33:37+00:00,True,False,7
-fox,0.763,right,same,1.19,none,right,leaving,True,4.4,-6.1,animals_ncnn_model (mock),79f51936eae8,2026-11-11T02:18:48+00:00,True,False,7
-wolf,0.878,right,approaching,1.0,sound,left,same,True,2.1,-4.6,animals_ncnn_model (mock),36a6b6e4a34e,2026-11-11T03:37:02+00:00,True,True,7
-deer,0.753,still,same,0.07,sound,still,same,False,,-4.2,animals_ncnn_model (mock),cc2f582ad424,2026-11-11T04:47:39+00:00,False,False,7
-deer,0.82,left,approaching,-1.45,none,still,same,False,,-4.5,animals_ncnn_model (mock),e5e567c980e3,2026-11-11T05:01:40+00:00,False,False,7
-deer,0.761,left,approaching,-1.28,sound,right,leaving,True,1.8,-4.1,animals_ncnn_model (mock),b97661463bc7,2026-11-11T06:59:02+00:00,False,False,7
-deer,0.402,right,approaching,1.07,sound,right,same,False,,-4.5,animals_ncnn_model (mock),4d715289fd86,2026-11-11T13:06:36+00:00,True,False,7
-fox,0.775,right,approaching,0.64,light,right,approaching,False,,-5.8,animals_ncnn_model (mock),ab8e6e35de9d,2026-11-11T14:13:39+00:00,True,False,7
-fox,0.793,still,same,-0.06,light,still,approaching,False,,-6.1,animals_ncnn_model (mock),8234addc5401,2026-11-11T14:53:11+00:00,False,False,7
-deer,0.655,right,same,0.42,light,right,approaching,False,,-4.2,animals_ncnn_model (mock),4236864fa3f3,2026-11-11T16:36:19+00:00,True,False,7
-fox,0.615,right,approaching,1.6,light,still,same,False,,-5.3,animals_ncnn_model (mock),265c0879d955,2026-11-11T16:43:30+00:00,True,False,7
-deer,0.787,right,approaching,1.09,sound,right,leaving,True,2.3,-7.7,animals_ncnn_model (mock),7faee8d4f587,2026-11-11T17:53:23+00:00,True,False,7
-deer,0.814,right,same,1.09,sound,left,same,True,0.8,-3.9,animals_ncnn_model (mock),f4f8c4963181,2026-11-11T18:48:17+00:00,True,True,7
-wolf,0.785,right,approaching,0.73,light,still,approaching,False,,-2.7,animals_ncnn_model (mock),c738d53a5eba,2026-11-11T18:53:42+00:00,True,False,7
-fox,0.844,right,same,1.5,none,right,approaching,False,,-6.4,animals_ncnn_model (mock),2ba713e3cd8f,2026-11-11T19:23:17+00:00,True,False,7
-fox,0.942,right,approaching,1.2,sound,left,leaving,True,1.7,-7.9,animals_ncnn_model (mock),b76db07822db,2026-11-11T19:29:51+00:00,True,True,7
-deer,0.545,left,same,-0.83,none,left,approaching,False,,-8.6,animals_ncnn_model (mock),bb11870898f3,2026-11-11T21:45:10+00:00,False,False,7
-fox,0.676,left,same,-0.8,none,left,same,False,,-6.7,animals_ncnn_model (mock),9f7241f2dab7,2026-11-11T22:10:13+00:00,False,False,7
-deer,0.472,unknown,unknown,0.0,sound,right,same,False,,-9.1,animals_ncnn_model (mock),5040a054ddcf,2026-11-11T23:35:08+00:00,False,False,7
-fox,0.717,right,same,0.43,none,left,same,True,2.8,-5.9,animals_ncnn_model (mock),1700294c7601,2026-11-12T01:56:24+00:00,True,True,7
-fox,0.914,right,leaving,1.26,sound,left,same,True,2.1,-7.2,animals_ncnn_model (mock),f60fdabe407f,2026-11-12T03:56:51+00:00,True,True,7
-wolf,0.802,right,same,0.74,none,right,same,False,,-5.0,animals_ncnn_model (mock),342630290644,2026-11-12T05:57:54+00:00,True,False,7
-fox,0.892,still,approaching,0.0,none,still,same,True,2.7,-2.7,animals_ncnn_model (mock),20cb2a9ccf28,2026-11-12T08:12:41+00:00,False,False,7
-wolf,0.724,right,same,1.04,none,right,approaching,False,,0.3,animals_ncnn_model (mock),3630d4633d0d,2026-11-12T10:16:55+00:00,True,False,7
-deer,0.799,right,same,0.78,light,right,same,False,,-7.5,animals_ncnn_model (mock),c5c4fb2579b1,2026-11-12T13:21:37+00:00,True,False,7
-fox,0.719,right,approaching,0.52,light,right,approaching,False,,-6.4,animals_ncnn_model (mock),3c930fa6cbe5,2026-11-12T16:02:12+00:00,True,False,7
-deer,0.741,left,leaving,-0.6,sound,left,same,False,,-7.2,animals_ncnn_model (mock),9557d20335c7,2026-11-12T17:44:17+00:00,False,False,7
-deer,0.882,right,leaving,0.9,none,right,same,False,,-7.6,animals_ncnn_model (mock),47b7af94e003,2026-11-12T19:18:44+00:00,True,False,7
-deer,0.837,right,approaching,0.56,sound,right,same,False,,-3.4,animals_ncnn_model (mock),6973d6986e60,2026-11-12T20:03:59+00:00,True,False,7
-deer,0.829,right,same,0.48,light,left,same,True,2.5,-9.0,animals_ncnn_model (mock),e0840f6a7678,2026-11-12T20:45:46+00:00,True,True,7
-fox,0.8,up,approaching,-0.01,sound,down,leaving,True,0.7,-4.8,animals_ncnn_model (mock),7b9b61b1c6f2,2026-11-12T21:57:21+00:00,False,False,7
-deer,0.825,up,approaching,0.08,none,down,leaving,True,2.2,-6.5,animals_ncnn_model (mock),e913f18832d1,2026-11-12T22:06:09+00:00,False,False,7
-wolf,0.776,down,same,0.11,sound,up,leaving,True,1.0,-6.8,animals_ncnn_model (mock),a7c88e61d464,2026-11-12T23:12:56+00:00,False,False,7
-fox,0.727,right,approaching,1.38,sound,still,same,False,,-5.2,animals_ncnn_model (mock),6a260d12833e,2026-11-12T23:37:55+00:00,True,False,7
-wolf,0.681,right,approaching,0.73,none,left,leaving,True,5.9,-5.0,animals_ncnn_model (mock),8d254fb31699,2026-11-13T00:29:24+00:00,True,True,7
-fox,0.401,left,leaving,-0.92,none,right,leaving,True,4.8,-8.3,animals_ncnn_model (mock),89aa0c469a57,2026-11-13T00:43:51+00:00,False,False,7
-deer,0.805,down,approaching,0.1,none,up,same,False,,-3.8,animals_ncnn_model (mock),d48f2e3248ca,2026-11-13T03:58:32+00:00,False,False,7
-bear,0.704,up,same,-0.07,sound,up,same,False,,-8.6,animals_ncnn_model (mock),0031f8cebf40,2026-11-13T04:02:52+00:00,False,False,7
-fox,0.73,left,same,-1.28,none,still,approaching,False,,-5.4,animals_ncnn_model (mock),e69f43f93012,2026-11-13T04:14:31+00:00,False,False,7
-deer,0.827,left,same,-1.16,none,left,approaching,False,,-6.6,animals_ncnn_model (mock),89f9300a0066,2026-11-13T12:56:30+00:00,False,False,7
-fox,0.719,right,same,1.0,light,right,same,False,,-3.5,animals_ncnn_model (mock),37e134cc2044,2026-11-13T13:23:26+00:00,True,False,7
-deer,0.898,left,same,-0.32,sound,left,same,False,,-9.1,animals_ncnn_model (mock),df22dd729e1e,2026-11-13T15:39:32+00:00,False,False,7
-fox,0.819,left,same,-0.53,sound,left,same,False,,-6.9,animals_ncnn_model (mock),20ffd6f933eb,2026-11-13T15:51:28+00:00,False,False,7
-fox,0.97,right,same,1.37,none,still,same,False,,-6.6,animals_ncnn_model (mock),5a9a61bf2f16,2026-11-13T18:56:15+00:00,True,False,7
-bear,0.861,down,same,-0.17,none,down,approaching,False,,-2.6,animals_ncnn_model (mock),94a47383d496,2026-11-13T21:16:28+00:00,False,False,7
-deer,0.686,up,approaching,0.16,none,up,leaving,True,7.5,-9.3,animals_ncnn_model (mock),0570d39e508d,2026-11-13T22:05:57+00:00,False,False,7
-wolf,0.703,down,leaving,0.13,light,up,leaving,True,1.8,-7.2,animals_ncnn_model (mock),6919a0c5b20c,2026-11-14T01:47:57+00:00,False,False,7
-deer,0.714,still,same,0.19,light,still,approaching,False,,-10.2,animals_ncnn_model (mock),104788dca2a9,2026-11-14T01:57:59+00:00,False,False,7
-fox,0.716,left,approaching,-0.75,sound,still,same,False,,-8.6,animals_ncnn_model (mock),076bd2b53ce6,2026-11-14T02:06:50+00:00,False,False,7
-fox,0.89,right,leaving,0.68,none,left,approaching,False,,-8.7,animals_ncnn_model (mock),55d299ff51ed,2026-11-14T04:10:06+00:00,True,True,7
-deer,0.681,left,leaving,-0.79,sound,right,same,True,1.9,-6.3,animals_ncnn_model (mock),3e424b7418d3,2026-11-14T05:07:13+00:00,False,False,7
-wolf,0.79,right,approaching,0.84,sound,right,same,False,,-7.5,animals_ncnn_model (mock),a5ace8cd76da,2026-11-14T05:15:18+00:00,True,False,7
-deer,0.891,right,same,0.86,none,right,same,False,,-3.5,animals_ncnn_model (mock),a1f6bb617485,2026-11-14T05:44:20+00:00,True,False,7
-fox,0.9,left,same,-1.36,none,left,same,False,,-2.8,animals_ncnn_model (mock),1f3ce2cbbb93,2026-11-14T06:59:30+00:00,False,False,7
-fox,0.613,left,same,-0.82,sound,left,same,False,,-5.6,animals_ncnn_model (mock),bf8002f08407,2026-11-14T13:33:32+00:00,False,False,7
-deer,0.848,right,approaching,1.09,none,right,approaching,False,,-7.6,animals_ncnn_model (mock),272778d734b8,2026-11-14T14:34:21+00:00,True,False,7
-deer,0.753,right,same,1.45,sound,still,same,False,,-5.1,animals_ncnn_model (mock),c0a84f5d612b,2026-11-14T15:05:29+00:00,True,False,7
-deer,0.734,right,same,0.56,sound,right,same,False,,-7.0,animals_ncnn_model (mock),cef365f7ef34,2026-11-14T15:50:11+00:00,True,False,7
-fox,0.562,right,same,0.99,sound,right,same,False,,-8.3,animals_ncnn_model (mock),92aca82ff8bf,2026-11-14T16:08:35+00:00,True,False,7
-fox,0.942,right,leaving,1.03,sound,left,same,True,1.4,-6.1,animals_ncnn_model (mock),7ea3ec42c96b,2026-11-14T19:16:09+00:00,True,True,7
+animal,confidence,direction_before,approach_before,dx_before,position_before,threat,reason,deterrent,outcome,gone,seconds_until_gone,checks,direction_after,approach_after,scenario,critical_side,temperature_c,model,id,timestamp,toward_critical_area,turned_around
+deer,0.925,left,approaching,-0.58,0.576,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.4,simulation,51c91e7ea419,2026-11-01T00:45:33+00:00,False,False
+fox,0.879,still,approaching,0.0,0.839,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.9,simulation,f38b80a4df5a,2026-11-01T00:48:22+00:00,False,False
+deer,0.718,right,approaching,0.76,0.512,True,deer is heading for the protected area; still learning what works on deer: trying sound,sound,left,True,3.6,4,left,leaving,crops,right,-3.6,simulation,a5ae8306d03b,2026-11-01T02:06:31+00:00,True,True
+fox,0.457,left,same,-0.61,0.592,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.5,simulation,f3f4dc28ff90,2026-11-01T02:46:07+00:00,False,False
+deer,0.761,left,approaching,-0.78,0.206,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.7,simulation,e2551a466884,2026-11-01T02:52:26+00:00,False,False
+deer,0.719,right,approaching,1.02,0.527,True,deer is heading for the protected area; still learning what works on deer: trying light,light,left,True,3.6,4,left,leaving,crops,right,-0.8,simulation,e51239292d22,2026-11-01T03:47:44+00:00,True,True
+deer,0.786,right,same,0.68,0.225,True,deer is heading for the protected area; still learning what works on deer: trying light,light,left,True,1.8,3,still,leaving,crops,right,-2.4,simulation,9f1999dd251d,2026-11-01T04:05:42+00:00,True,False
+wolf,0.736,still,same,0.0,0.808,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.6,simulation,6bad8e7aa6e9,2026-11-01T04:34:21+00:00,False,False
+wolf,0.772,right,same,0.96,0.429,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.5,simulation,9293c88b2875,2026-11-01T05:30:33+00:00,True,False
+deer,0.771,still,same,0.0,0.882,True,deer is inside the protected area; still learning what works on deer: trying none,none,entered,True,,3,still,same,crops,right,-3.2,simulation,d7a78c3d5f16,2026-11-01T12:06:27+00:00,False,False
+fox,0.685,left,same,-0.91,0.176,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.7,simulation,c6cdbb049a79,2026-11-01T14:19:14+00:00,False,False
+fox,0.737,still,same,0.0,0.865,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.7,simulation,7dabc4a334bf,2026-11-01T15:17:50+00:00,False,False
+deer,0.727,up,approaching,0.0,0.636,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.5,simulation,c5e8c0433cbd,2026-11-01T15:22:54+00:00,False,False
+bear,0.721,right,approaching,0.73,0.28,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.7,simulation,70eb96263ae6,2026-11-01T16:08:41+00:00,True,False
+wolf,0.797,right,same,0.55,0.53,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.3,simulation,00a63d6c51e3,2026-11-01T16:18:44+00:00,True,False
+wolf,0.852,right,approaching,0.91,0.294,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.9,simulation,14aa9d3c7dec,2026-11-01T16:22:38+00:00,True,False
+bear,0.47,left,approaching,-1.03,0.484,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.6,simulation,49881c593af5,2026-11-01T16:34:13+00:00,False,False
+deer,0.756,unknown,unknown,0.0,0.304,False,can't tell yet which way the deer is going,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.7,simulation,1919d11745ad,2026-11-01T16:42:53+00:00,False,False
+fox,0.762,right,approaching,0.9,0.656,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.1,simulation,02f0731c9452,2026-11-01T16:59:25+00:00,True,False
+deer,0.742,right,same,0.79,0.464,True,deer is heading for the protected area; still learning what works on deer: trying light,light,unknown,True,,3,still,leaving,crops,right,-4.2,simulation,e416d0944996,2026-11-01T18:02:14+00:00,True,False
+wolf,0.831,still,same,0.0,0.806,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.1,simulation,7d83af67d461,2026-11-01T19:53:22+00:00,False,False
+fox,0.733,down,same,0.0,0.504,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.0,simulation,5071adec6f11,2026-11-01T21:06:15+00:00,False,False
+wolf,0.789,unknown,unknown,0.0,0.527,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.5,simulation,65b035d14880,2026-11-01T22:06:43+00:00,False,False
+deer,0.691,right,approaching,0.85,0.579,True,deer is heading for the protected area; still learning what works on deer: trying light,light,left,True,3.6,4,left,leaving,crops,right,-4.4,simulation,5900406329bc,2026-11-01T22:09:28+00:00,True,True
+wolf,0.75,left,approaching,-0.69,0.123,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.9,simulation,ffb8fadb8908,2026-11-01T23:51:31+00:00,False,False
+deer,0.97,right,approaching,0.91,0.272,True,deer is heading for the protected area; still learning what works on deer: trying light,light,entered,True,,4,right,same,crops,right,-3.8,simulation,5b4cede7bd0c,2026-11-02T00:22:52+00:00,True,False
+deer,0.854,right,same,0.81,0.262,True,"deer is heading for the protected area; sound works best on deer so far (chance it leaves: none 33%, sound 67%, light 66%)",sound,left,True,3.6,4,left,leaving,crops,right,-3.8,simulation,6058ce1d62e0,2026-11-02T00:25:12+00:00,True,True
+deer,0.846,left,approaching,-0.74,0.435,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.3,simulation,bef7ffe976ab,2026-11-02T01:07:02+00:00,False,False
+deer,0.71,right,approaching,1.04,0.37,True,"deer is heading for the protected area; sound works best on deer so far (chance it leaves: none 33%, sound 75%, light 66%)",sound,left,True,3.6,4,left,leaving,crops,right,-1.5,simulation,a341837a7935,2026-11-02T03:40:51+00:00,True,True
+deer,0.707,left,same,-0.84,0.17,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-0.0,simulation,b91d1389b372,2026-11-02T10:31:29+00:00,False,False
+fox,0.911,left,leaving,-0.58,0.285,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.0,simulation,16f457241955,2026-11-02T11:25:57+00:00,False,False
+bear,0.969,right,approaching,0.69,0.313,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.9,simulation,89be8eb5140f,2026-11-02T13:33:50+00:00,True,False
+deer,0.749,right,approaching,1.02,0.398,True,"deer is heading for the protected area; re-testing light on deer, in case things changed (chance it leaves: none 33%, sound 80%, light 66%)",light,left,True,3.6,4,left,leaving,crops,right,-7.3,simulation,49a04ac87fc0,2026-11-02T15:19:30+00:00,True,True
+bear,0.68,still,same,0.0,0.621,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.4,simulation,2411751b4c83,2026-11-02T15:46:54+00:00,False,False
+deer,0.863,left,same,-0.96,0.319,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,0.8,simulation,a511e060a724,2026-11-02T16:35:34+00:00,False,False
+wolf,0.827,left,leaving,-0.68,0.335,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.0,simulation,b766b437bdb5,2026-11-02T16:41:17+00:00,False,False
+wolf,0.803,up,same,0.0,0.693,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.3,simulation,4f1a93d20470,2026-11-02T17:27:10+00:00,False,False
+fox,0.842,right,approaching,0.65,0.519,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.4,simulation,d90906555096,2026-11-02T19:45:39+00:00,True,False
+deer,0.739,right,same,0.46,0.422,True,"deer is heading for the protected area; control trial: no deterrent, to measure what happens without one",none,stayed,False,,12,still,same,crops,right,-2.4,simulation,5e6cb5fb12e0,2026-11-02T19:56:35+00:00,True,False
+wolf,0.756,left,same,-0.93,0.506,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.4,simulation,76085d111a9d,2026-11-02T20:00:28+00:00,False,False
+fox,0.917,right,same,0.6,0.514,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.3,simulation,17376c167229,2026-11-02T23:29:25+00:00,True,False
+bear,0.793,up,leaving,0.0,0.285,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.3,simulation,e41666160227,2026-11-02T23:35:02+00:00,False,False
+wolf,0.733,down,approaching,0.0,0.204,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.4,simulation,8df095f19a51,2026-11-02T23:43:09+00:00,False,False
+fox,0.815,still,same,0.0,0.858,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.8,simulation,de027f9ac098,2026-11-02T23:59:58+00:00,False,False
+deer,0.817,still,approaching,0.0,0.777,True,"deer is inside the protected area; sound works best on deer so far (chance it leaves: none 25%, sound 80%, light 71%)",sound,left,True,3.6,4,left,leaving,crops,right,-5.1,simulation,6ce91dcf884c,2026-11-03T00:11:51+00:00,False,False
+deer,0.777,unknown,unknown,0.0,0.923,True,"deer is inside the protected area; sound works best on deer so far (chance it leaves: none 25%, sound 83%, light 71%)",sound,entered,True,,3,right,same,crops,right,-3.3,simulation,cd7381a0ba05,2026-11-03T02:02:46+00:00,False,False
+fox,0.826,right,approaching,0.62,0.596,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.3,simulation,dde3c0099eba,2026-11-03T02:11:34+00:00,True,False
+deer,0.622,left,approaching,-0.92,0.364,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.3,simulation,e01c99a46df0,2026-11-03T04:10:01+00:00,False,False
+fox,0.811,left,leaving,-0.97,0.297,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.3,simulation,65ed7db4304d,2026-11-03T04:20:33+00:00,False,False
+deer,0.765,left,approaching,-0.95,0.302,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.5,simulation,864feab06e9b,2026-11-03T05:33:51+00:00,False,False
+fox,0.864,right,approaching,0.67,0.39,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.2,simulation,d82f423674a6,2026-11-03T07:30:56+00:00,True,False
+deer,0.792,right,leaving,0.56,0.589,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 25%, sound 70%, light 71%)",light,left,True,3.6,4,left,leaving,crops,right,-3.0,simulation,90626b82e6c9,2026-11-03T09:34:47+00:00,True,True
+fox,0.815,down,leaving,0.0,0.647,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.2,simulation,fb75ed1d9d16,2026-11-03T12:38:56+00:00,False,False
+deer,0.585,right,leaving,0.66,0.23,False,only 58% sure it is a deer (need 60%),none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.6,simulation,83507aac319f,2026-11-03T13:06:50+00:00,True,False
+deer,0.695,still,approaching,0.0,0.425,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.6,simulation,ce1f849acfb5,2026-11-03T14:06:01+00:00,False,False
+wolf,0.912,right,same,0.88,0.409,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-0.8,simulation,9355067f0cfc,2026-11-03T14:57:20+00:00,True,False
+fox,0.664,left,same,-0.49,0.193,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.3,simulation,c40d397a7623,2026-11-03T15:50:50+00:00,False,False
+deer,0.783,down,leaving,0.0,0.472,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.9,simulation,d1712106119e,2026-11-03T16:34:14+00:00,False,False
+deer,0.83,right,approaching,0.71,0.242,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 25%, sound 70%, light 74%)",light,left,True,1.8,3,still,leaving,crops,right,-8.0,simulation,f6750c83e786,2026-11-03T16:41:45+00:00,True,False
+bear,0.803,left,leaving,-0.99,0.136,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.7,simulation,85f1b464c554,2026-11-03T16:51:52+00:00,False,False
+deer,0.887,left,approaching,-0.42,0.145,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.1,simulation,aba4e306f0c4,2026-11-03T18:15:14+00:00,False,False
+deer,0.802,left,approaching,-0.42,0.559,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.9,simulation,b7a11a42721e,2026-11-03T19:10:42+00:00,False,False
+wolf,0.88,left,approaching,-0.56,0.174,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.4,simulation,6ded9f4fb02b,2026-11-03T19:33:07+00:00,False,False
+deer,0.766,left,approaching,-0.93,0.421,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.2,simulation,247578549014,2026-11-03T20:27:53+00:00,False,False
+wolf,0.857,left,approaching,-0.53,0.363,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.5,simulation,e2617b6bc3c6,2026-11-03T21:40:37+00:00,False,False
+deer,0.788,right,approaching,0.84,0.438,True,"deer is heading for the protected area; re-testing none on deer, in case things changed (chance it leaves: none 25%, sound 70%, light 77%)",none,stayed,False,,12,still,same,crops,right,-3.1,simulation,d9813a9afa39,2026-11-03T22:30:24+00:00,True,False
+deer,0.73,up,approaching,0.0,0.31,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.2,simulation,1f3ce2cbbb93,2026-11-03T22:40:07+00:00,False,False
+deer,0.897,right,approaching,0.71,0.399,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 20%, sound 70%, light 77%)",sound,left,True,1.8,3,left,leaving,crops,right,-2.4,simulation,b361a06d7a69,2026-11-03T23:47:17+00:00,True,True
+wolf,0.451,still,leaving,0.0,0.452,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.3,simulation,ac9f74f09af5,2026-11-04T00:55:33+00:00,False,False
+deer,0.7,left,approaching,-0.51,0.209,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.8,simulation,b6ea782afe6b,2026-11-04T01:22:29+00:00,False,False
+fox,0.779,right,same,0.98,0.279,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.5,simulation,f5a9edf165da,2026-11-04T01:55:52+00:00,True,False
+deer,0.807,left,same,-0.92,0.533,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.9,simulation,fa97fcbad167,2026-11-04T02:49:07+00:00,False,False
+fox,0.75,right,same,0.52,0.514,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.2,simulation,40418bae8e66,2026-11-04T04:38:29+00:00,True,False
+fox,0.824,right,approaching,0.67,0.31,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.7,simulation,66ee8f4ecb4f,2026-11-04T04:51:29+00:00,True,False
+deer,0.97,right,approaching,0.64,0.34,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 20%, sound 74%, light 77%)",light,left,True,1.8,3,still,leaving,crops,right,-5.3,simulation,ff8bab74fe57,2026-11-04T14:00:44+00:00,True,False
+deer,0.867,right,same,0.51,0.375,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 20%, sound 74%, light 80%)",light,left,True,1.8,3,left,leaving,crops,right,-2.7,simulation,8c534ec0a954,2026-11-04T14:27:44+00:00,True,True
+fox,0.97,right,same,0.64,0.538,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.3,simulation,a598ccbfd2ec,2026-11-04T14:34:49+00:00,True,False
+deer,0.747,right,approaching,0.61,0.511,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 20%, sound 74%, light 81%)",sound,left,True,3.6,4,left,leaving,crops,right,-4.7,simulation,b2c5807c7e30,2026-11-04T15:11:04+00:00,True,True
+deer,0.97,up,same,0.0,0.38,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.3,simulation,ce0d7a98b9ac,2026-11-04T17:01:01+00:00,False,False
+deer,0.713,left,approaching,-0.86,0.558,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-0.3,simulation,66e6e26b524a,2026-11-04T17:07:39+00:00,False,False
+deer,0.639,right,leaving,0.84,0.465,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 20%, sound 77%, light 81%)",sound,entered,False,,2,right,approaching,crops,right,-5.5,simulation,33d96edd77d8,2026-11-04T17:08:13+00:00,True,False
+bear,0.784,right,leaving,0.98,0.424,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.7,simulation,d4f34b5c1a95,2026-11-04T17:23:17+00:00,True,False
+fox,0.853,left,approaching,-0.88,0.496,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.8,simulation,025f44df8a13,2026-11-04T18:00:05+00:00,False,False
+fox,0.663,right,approaching,0.81,0.493,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.2,simulation,265c0879d955,2026-11-04T20:01:29+00:00,True,False
+fox,0.708,right,approaching,0.81,0.609,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.9,simulation,e1cda7d83351,2026-11-04T21:20:45+00:00,True,False
+deer,0.719,right,approaching,0.98,0.527,True,"deer is heading for the protected area; control trial: no deterrent, to measure what happens without one",none,entered,True,,3,right,approaching,crops,right,-4.5,simulation,f5ee98e6e5b7,2026-11-04T23:52:11+00:00,True,False
+deer,0.557,left,same,-0.45,0.264,False,only 55% sure it is a deer (need 60%),none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.1,simulation,cdb5754e64f4,2026-11-05T00:21:53+00:00,False,False
+deer,0.871,right,approaching,0.85,0.48,True,"deer is heading for the protected area; control trial: no deterrent, to measure what happens without one",none,stayed,False,,12,still,approaching,crops,right,-2.0,simulation,ed4d85dc0a68,2026-11-05T00:54:16+00:00,True,False
+deer,0.854,right,leaving,0.93,0.368,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 15%, sound 68%, light 81%)",light,entered,False,,2,right,same,crops,right,-5.2,simulation,5c247d510557,2026-11-05T01:04:03+00:00,True,False
+fox,0.891,down,same,0.0,0.391,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.6,simulation,3328ebe80fa9,2026-11-05T01:55:33+00:00,False,False
+fox,0.97,right,same,0.45,0.193,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-9.1,simulation,b15142969a50,2026-11-05T01:58:23+00:00,True,False
+deer,0.714,left,same,-0.92,0.37,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.2,simulation,77767c4e4248,2026-11-05T02:40:47+00:00,False,False
+fox,0.722,right,same,0.77,0.446,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.5,simulation,c44682e26123,2026-11-05T02:48:51+00:00,True,False
+deer,0.703,right,same,0.88,0.334,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 15%, sound 68%, light 74%)",sound,entered,False,,2,right,same,crops,right,-1.8,simulation,7f45d3801b73,2026-11-05T03:41:10+00:00,True,False
+deer,0.764,still,same,0.0,0.426,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-0.1,simulation,6f29ced66b44,2026-11-05T06:35:51+00:00,False,False
+wolf,0.847,right,same,0.45,0.21,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.8,simulation,a9f58ece78b0,2026-11-05T11:53:22+00:00,True,False
+fox,0.882,right,approaching,0.72,0.433,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.5,simulation,089be842997d,2026-11-05T14:08:45+00:00,True,False
+wolf,0.778,right,leaving,0.79,0.43,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-11.8,simulation,4a41d4d6d278,2026-11-05T14:21:55+00:00,True,False
+bear,0.858,right,same,0.6,0.484,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.2,simulation,7528511070a7,2026-11-05T14:52:06+00:00,True,False
+fox,0.858,right,same,0.45,0.258,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.7,simulation,cfd8eab42bd6,2026-11-05T15:18:47+00:00,True,False
+wolf,0.842,still,leaving,0.0,0.81,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.6,simulation,703e192f09a9,2026-11-05T15:20:01+00:00,False,False
+deer,0.953,right,same,0.6,0.621,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 15%, sound 61%, light 74%)",sound,left,True,3.6,4,left,leaving,crops,right,-6.0,simulation,b76db07822db,2026-11-05T16:05:33+00:00,True,True
+deer,0.829,right,approaching,0.96,0.669,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 15%, sound 65%, light 74%)",light,left,True,5.4,5,left,leaving,crops,right,-4.9,simulation,f654c8fb4456,2026-11-05T17:18:44+00:00,True,True
+wolf,0.834,right,same,0.83,0.634,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.5,simulation,424283e2665a,2026-11-05T17:48:42+00:00,True,False
+bear,0.765,left,same,-0.44,0.315,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.3,simulation,ec0673f29c6a,2026-11-05T18:59:20+00:00,False,False
+deer,0.845,right,same,0.46,0.61,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 15%, sound 65%, light 76%)",sound,stayed,False,,12,still,approaching,crops,right,-6.6,simulation,2edcf71bd135,2026-11-05T20:32:47+00:00,True,False
+deer,0.97,right,same,0.57,0.46,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 15%, sound 59%, light 76%)",sound,left,True,3.6,4,left,leaving,crops,right,-4.4,simulation,6cfff79edc82,2026-11-05T20:49:33+00:00,True,True
+wolf,0.781,right,leaving,0.57,0.449,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.1,simulation,ba5cd7aa2208,2026-11-05T21:01:27+00:00,True,False
+deer,0.97,left,same,-0.51,0.147,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.3,simulation,f0ac7aa95416,2026-11-05T21:24:18+00:00,False,False
+fox,0.753,right,approaching,0.82,0.462,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.3,simulation,a6071075a5b0,2026-11-06T00:17:37+00:00,True,False
+wolf,0.654,down,approaching,0.0,0.437,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.8,simulation,e73c44371ff3,2026-11-06T00:31:06+00:00,False,False
+bear,0.77,right,approaching,0.62,0.53,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.3,simulation,5ec07f9880a6,2026-11-06T00:38:41+00:00,True,False
+bear,0.653,right,leaving,0.54,0.414,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,,simulation,31d018bee074,2026-11-06T02:29:40+00:00,True,False
+deer,0.879,right,approaching,0.84,0.314,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 15%, sound 63%, light 76%)",light,stayed,False,,12,still,approaching,crops,right,-4.8,simulation,db4cbf5f85e2,2026-11-06T03:09:56+00:00,True,False
+fox,0.688,right,approaching,0.54,0.457,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.5,simulation,2577694baad6,2026-11-06T03:27:32+00:00,True,False
+deer,0.838,right,same,1.03,0.326,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 15%, sound 63%, light 69%)",light,left,True,1.8,3,still,leaving,crops,right,-7.6,simulation,ea9e730b89dc,2026-11-06T03:51:29+00:00,True,False
+bear,0.796,right,leaving,0.69,0.25,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.2,simulation,17980397a31d,2026-11-06T04:11:16+00:00,True,False
+fox,0.71,right,approaching,0.68,0.625,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.1,simulation,7383000e05d0,2026-11-06T05:19:13+00:00,True,False
+deer,0.9,left,approaching,-0.69,0.475,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,0.7,simulation,8bed94a4d29c,2026-11-06T06:50:14+00:00,False,False
+deer,0.763,right,same,0.99,0.487,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 15%, sound 63%, light 72%)",light,left,True,1.8,3,left,leaving,crops,right,-1.6,simulation,d61beea33d4e,2026-11-06T13:13:30+00:00,True,True
+deer,0.841,left,approaching,-0.71,0.448,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.2,simulation,9c311543c8ef,2026-11-06T13:16:53+00:00,False,False
+deer,0.77,left,leaving,-0.62,0.549,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.1,simulation,32e4cb348cea,2026-11-06T13:43:19+00:00,False,False
+deer,0.666,right,approaching,0.88,0.431,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 15%, sound 63%, light 74%)",light,left,True,3.6,4,left,leaving,crops,right,-6.5,simulation,1eed3f724926,2026-11-06T13:53:23+00:00,True,True
+fox,0.886,right,approaching,0.64,0.545,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.3,simulation,0b6e9efebfda,2026-11-06T14:26:24+00:00,True,False
+bear,0.794,left,same,-0.78,0.55,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.8,simulation,8be4c07991d4,2026-11-06T14:43:26+00:00,False,False
+deer,0.438,right,same,0.81,0.291,False,only 43% sure it is a deer (need 60%),none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.1,simulation,44bef4d475ec,2026-11-06T14:58:57+00:00,True,False
+deer,0.831,left,approaching,-0.79,0.567,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.5,simulation,c1f6ab215122,2026-11-06T17:09:00+00:00,False,False
+bear,0.744,right,leaving,0.46,0.395,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.6,simulation,5b74a2aa216a,2026-11-06T17:26:53+00:00,True,False
+deer,0.878,right,same,0.74,0.65,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 15%, sound 63%, light 75%)",light,entered,False,,1,right,same,crops,right,-3.2,simulation,0150279e6933,2026-11-06T18:29:59+00:00,True,False
+bear,0.915,still,same,0.0,0.869,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.5,simulation,aa22503dc86b,2026-11-06T18:48:01+00:00,False,False
+fox,0.86,right,leaving,0.82,0.627,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.5,simulation,93049543c6c3,2026-11-06T19:41:25+00:00,True,False
+fox,0.632,down,approaching,0.0,0.643,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.1,simulation,ed1bc4ffc64e,2026-11-06T19:52:53+00:00,False,False
+deer,0.745,right,approaching,0.97,0.534,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 15%, sound 63%, light 70%)",sound,stayed,False,,12,still,approaching,crops,right,-1.4,simulation,dc56f32efa03,2026-11-06T20:04:08+00:00,True,False
+bear,0.783,right,approaching,0.6,0.443,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.6,simulation,b0937df2fc58,2026-11-06T20:06:12+00:00,True,False
+fox,0.792,left,leaving,-0.44,0.268,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.6,simulation,f000b870e4e1,2026-11-07T00:12:47+00:00,False,False
+deer,0.956,still,same,0.0,0.818,True,"deer is inside the protected area; light works best on deer so far (chance it leaves: none 15%, sound 58%, light 70%)",light,entered,True,,3,right,same,crops,right,-5.4,simulation,8bb922867c53,2026-11-07T01:09:36+00:00,False,False
+deer,0.855,left,approaching,-0.41,0.589,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.1,simulation,79153911c9b0,2026-11-07T01:21:35+00:00,False,False
+wolf,0.773,left,same,-1.03,0.361,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.8,simulation,21979682e074,2026-11-07T03:02:11+00:00,False,False
+fox,0.707,right,approaching,0.56,0.383,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.1,simulation,991ff551abfd,2026-11-07T03:32:54+00:00,True,False
+fox,0.773,right,leaving,0.57,0.371,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.9,simulation,b14ae0412118,2026-11-07T04:46:11+00:00,True,False
+bear,0.725,left,leaving,-0.56,0.165,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.7,simulation,4a6a81356bc5,2026-11-07T11:25:01+00:00,False,False
+deer,0.862,right,approaching,0.76,0.314,True,"deer is heading for the protected area; control trial: no deterrent, to measure what happens without one",none,stayed,False,,12,still,approaching,crops,right,-5.3,simulation,6af3159d6a38,2026-11-07T13:23:02+00:00,True,False
+deer,0.71,left,same,-0.62,0.166,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.0,simulation,28fdab266981,2026-11-07T13:23:33+00:00,False,False
+fox,0.804,right,approaching,0.47,0.366,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.1,simulation,22a6ef5fd31c,2026-11-07T13:40:06+00:00,True,False
+bear,0.691,left,approaching,-0.97,0.33,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.9,simulation,c84cc88f63d6,2026-11-07T14:24:34+00:00,False,False
+deer,0.834,right,same,0.9,0.267,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 13%, sound 58%, light 66%)",sound,left,True,1.8,3,still,leaving,crops,right,-5.5,simulation,9606ea3e7f73,2026-11-07T14:50:07+00:00,True,False
+deer,0.769,right,same,0.93,0.371,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 13%, sound 61%, light 66%)",light,stayed,False,,12,still,same,crops,right,-5.6,simulation,81f84e564cbf,2026-11-07T14:52:02+00:00,True,False
+deer,0.906,still,approaching,0.0,0.391,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.5,simulation,63f1697b65cb,2026-11-07T16:09:57+00:00,False,False
+deer,0.809,right,approaching,1.02,0.299,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 13%, sound 61%, light 62%)",light,entered,False,,2,right,same,crops,right,-5.7,simulation,2606ced8c284,2026-11-07T16:56:19+00:00,True,False
+fox,0.852,down,same,0.0,0.266,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.0,simulation,ce918520bf0c,2026-11-07T17:09:28+00:00,False,False
+fox,0.908,left,same,-0.89,0.138,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.3,simulation,6041325abdec,2026-11-07T18:13:09+00:00,False,False
+fox,0.79,left,same,-0.67,0.118,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.3,simulation,f575039e257a,2026-11-07T18:17:27+00:00,False,False
+wolf,0.922,left,same,-0.48,0.262,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.7,simulation,63ac1b2b980e,2026-11-07T19:01:35+00:00,False,False
+fox,0.678,left,approaching,-0.63,0.388,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.1,simulation,12cce344f1c3,2026-11-07T19:12:18+00:00,False,False
+bear,0.801,left,leaving,-0.6,0.507,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.4,simulation,d5730d26efa0,2026-11-07T21:00:15+00:00,False,False
+deer,0.792,right,leaving,0.77,0.501,True,"deer is heading for the protected area; re-testing light on deer, in case things changed (chance it leaves: none 13%, sound 61%, light 58%)",light,left,True,3.6,4,left,leaving,crops,right,-6.9,simulation,a57258d62944,2026-11-07T22:08:08+00:00,True,True
+deer,0.793,still,leaving,0.0,0.83,True,"deer is inside the protected area; re-testing light on deer, in case things changed (chance it leaves: none 13%, sound 61%, light 60%)",light,left,True,3.6,4,left,leaving,crops,right,-4.2,simulation,ef3e5a789b32,2026-11-08T04:10:03+00:00,False,False
+deer,0.747,right,same,0.93,0.616,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 13%, sound 61%, light 62%)",light,left,True,3.6,4,left,leaving,crops,right,-5.7,simulation,f1f0c50029ab,2026-11-08T04:26:23+00:00,True,True
+fox,0.765,left,leaving,-0.4,0.343,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.9,simulation,068c069a306f,2026-11-08T05:07:35+00:00,False,False
+fox,0.713,right,approaching,0.52,0.436,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.2,simulation,79dc82a8c712,2026-11-08T06:15:38+00:00,True,False
+wolf,0.737,left,same,-0.62,0.303,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.0,simulation,aecb53e81536,2026-11-08T11:45:59+00:00,False,False
+bear,0.696,right,same,0.71,0.64,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.9,simulation,733c4dbd6e02,2026-11-08T14:13:24+00:00,True,False
+deer,0.771,right,same,0.57,0.256,True,"deer is heading for the protected area; control trial: no deterrent, to measure what happens without one",none,stayed,False,,12,still,same,crops,right,-4.5,simulation,e9f95377899a,2026-11-08T14:24:19+00:00,True,False
+fox,0.82,down,leaving,0.0,0.628,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.6,simulation,7f601f124a78,2026-11-08T14:55:07+00:00,False,False
+fox,0.9,right,same,0.58,0.507,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.6,simulation,7771f2e36355,2026-11-08T15:03:18+00:00,True,False
+deer,0.722,left,approaching,-0.62,0.428,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.8,simulation,9e5c92559248,2026-11-08T15:13:23+00:00,False,False
+wolf,0.775,right,same,0.81,0.514,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.0,simulation,2bb5ce107503,2026-11-08T15:25:58+00:00,True,False
+deer,0.787,right,same,0.78,0.242,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 12%, sound 61%, light 64%)",sound,entered,False,,3,right,same,crops,right,-5.8,simulation,975c27655f91,2026-11-08T17:39:35+00:00,True,False
+deer,0.691,right,same,0.48,0.596,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 12%, sound 56%, light 64%)",light,left,True,1.8,3,left,leaving,crops,right,-2.4,simulation,34fd850567c2,2026-11-08T17:48:54+00:00,True,True
+deer,0.747,right,same,0.9,0.26,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 12%, sound 56%, light 66%)",light,left,True,3.6,4,still,approaching,crops,right,-2.6,simulation,9f936f00e7c4,2026-11-08T18:44:52+00:00,True,False
+wolf,0.821,right,same,0.76,0.374,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.9,simulation,7575561f8bfe,2026-11-08T19:21:00+00:00,True,False
+wolf,0.868,down,same,0.0,0.608,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.1,simulation,3bbb9924eb8b,2026-11-08T19:39:05+00:00,False,False
+fox,0.451,right,same,0.55,0.331,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.5,simulation,b5fcadb21095,2026-11-08T20:32:33+00:00,True,False
+deer,0.425,right,approaching,0.5,0.212,False,only 42% sure it is a deer (need 60%),none,not_a_threat,False,,0,unknown,unknown,crops,right,,simulation,8c1f11cb4ea7,2026-11-08T21:13:38+00:00,True,False
+fox,0.851,right,same,0.47,0.458,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.3,simulation,08be662f286b,2026-11-08T22:17:42+00:00,True,False
+wolf,0.687,right,same,0.92,0.436,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.9,simulation,a5b0320be3f8,2026-11-08T22:44:16+00:00,True,False
+bear,0.799,right,same,0.67,0.422,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.8,simulation,2c61ebe48123,2026-11-08T22:59:28+00:00,True,False
+deer,0.696,right,approaching,0.63,0.388,True,"deer is heading for the protected area; control trial: no deterrent, to measure what happens without one",none,entered,False,,3,right,approaching,crops,right,-3.9,simulation,a5f20b94a014,2026-11-09T00:32:46+00:00,True,False
+deer,0.745,still,same,0.0,0.781,True,"deer is inside the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 11%, sound 56%, light 68%)",sound,entered,False,,12,still,same,crops,right,-4.5,simulation,ee538b75d02a,2026-11-09T01:01:32+00:00,False,False
+deer,0.752,still,approaching,0.0,0.508,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.3,simulation,0c56d6c769cb,2026-11-09T01:43:36+00:00,False,False
+fox,0.795,right,leaving,0.99,0.668,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.9,simulation,de3b73aa881e,2026-11-09T01:45:09+00:00,True,False
+bear,0.928,left,same,-0.67,0.165,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.7,simulation,a40ec134a79b,2026-11-09T01:55:51+00:00,False,False
+deer,0.434,right,same,0.99,0.596,False,only 43% sure it is a deer (need 60%),none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.0,simulation,7bdc304374b3,2026-11-09T03:08:06+00:00,True,False
+deer,0.807,right,same,0.94,0.414,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 11%, sound 53%, light 68%)",light,left,True,3.6,4,left,leaving,crops,right,-8.1,simulation,adbab600860c,2026-11-09T03:44:29+00:00,True,True
+deer,0.798,left,leaving,-0.94,0.202,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.1,simulation,053de0b89bcb,2026-11-09T04:18:22+00:00,False,False
+deer,0.782,left,approaching,-0.74,0.124,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.4,simulation,a549210f4de3,2026-11-09T09:38:30+00:00,False,False
+deer,0.668,right,approaching,0.45,0.307,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 11%, sound 53%, light 70%)",sound,left,True,1.8,3,still,leaving,crops,right,-2.9,simulation,37fe87a9ec13,2026-11-09T12:52:55+00:00,True,False
+wolf,0.904,right,same,0.72,0.612,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.0,simulation,e1f6c9108f89,2026-11-09T13:05:29+00:00,True,False
+deer,0.922,right,leaving,0.82,0.317,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 11%, sound 56%, light 70%)",light,entered,False,,3,right,approaching,crops,right,-4.5,simulation,e505845074a1,2026-11-09T13:43:58+00:00,True,False
+deer,0.97,left,approaching,-0.51,0.606,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.2,simulation,2341f4e2ea68,2026-11-09T14:06:52+00:00,False,False
+deer,0.846,right,approaching,0.65,0.446,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 11%, sound 56%, light 66%)",light,entered,False,,2,right,same,crops,right,-2.6,simulation,a945290f5d0f,2026-11-09T14:13:53+00:00,True,False
+fox,0.774,right,approaching,0.95,0.546,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.9,simulation,2f9ed828f123,2026-11-09T14:14:58+00:00,True,False
+deer,0.663,right,approaching,0.52,0.491,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 11%, sound 56%, light 63%)",sound,left,True,3.6,4,left,leaving,crops,right,-6.8,simulation,45d663d52b10,2026-11-09T15:06:12+00:00,True,True
+deer,0.876,right,approaching,0.97,0.668,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 11%, sound 58%, light 63%)",light,left,True,3.6,4,left,leaving,crops,right,-5.7,simulation,88736ce4048f,2026-11-09T16:25:09+00:00,True,True
+wolf,0.796,right,leaving,0.91,0.419,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.5,simulation,de386a01977b,2026-11-09T16:29:50+00:00,True,False
+fox,0.836,right,same,0.55,0.587,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.6,simulation,62181422fbef,2026-11-09T16:48:36+00:00,True,False
+fox,0.847,right,approaching,0.51,0.61,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.3,simulation,2fec4e0e8896,2026-11-09T17:16:28+00:00,True,False
+fox,0.707,left,approaching,-0.71,0.197,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.9,simulation,2cb85814b53f,2026-11-09T17:53:46+00:00,False,False
+deer,0.798,still,approaching,0.0,0.927,True,"deer is inside the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 11%, sound 58%, light 65%)",sound,entered,True,,2,unknown,unknown,crops,right,-3.5,simulation,76c343710baf,2026-11-09T18:08:00+00:00,False,False
+deer,0.82,right,leaving,0.81,0.661,True,"deer is heading for the protected area; control trial: no deterrent, to measure what happens without one",none,entered,False,,1,right,leaving,crops,right,-6.0,simulation,ffce7f62df26,2026-11-09T19:38:21+00:00,True,False
+deer,0.821,right,approaching,0.85,0.645,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 10%, sound 55%, light 65%)",light,left,True,3.6,4,left,leaving,crops,right,-7.3,simulation,d0a3c7be5613,2026-11-09T19:43:03+00:00,True,True
+deer,0.97,still,approaching,0.0,0.533,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.4,simulation,49a46a6dc402,2026-11-09T21:16:35+00:00,False,False
+fox,0.712,still,approaching,0.0,0.672,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.3,simulation,2d4d77bb3654,2026-11-09T21:40:04+00:00,False,False
+fox,0.775,right,same,0.89,0.435,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.2,simulation,84f35366ece2,2026-11-09T21:51:41+00:00,True,False
+wolf,0.673,right,approaching,1.03,0.38,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.1,simulation,71d07b67cfa6,2026-11-10T00:41:39+00:00,True,False
+wolf,0.951,still,same,0.0,0.887,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.2,simulation,86f91ebf3deb,2026-11-10T04:14:43+00:00,False,False
+deer,0.97,right,approaching,0.53,0.623,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 10%, sound 55%, light 66%)",light,left,True,3.6,4,left,leaving,crops,right,-4.5,simulation,8652cbee23b0,2026-11-10T04:36:56+00:00,True,True
+fox,0.795,right,approaching,0.96,0.452,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.4,simulation,4619cbf5514c,2026-11-10T05:30:16+00:00,True,False
+fox,0.938,right,same,0.59,0.269,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.6,simulation,1835d0ef5c36,2026-11-10T06:31:58+00:00,True,False
+deer,0.886,right,leaving,0.5,0.342,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 10%, sound 55%, light 68%)",sound,left,True,1.8,3,left,leaving,crops,right,-1.6,simulation,36ded90e013a,2026-11-10T09:42:52+00:00,True,True
+deer,0.881,left,same,-0.56,0.583,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.3,simulation,01413b38c237,2026-11-10T14:24:30+00:00,False,False
+fox,0.821,right,approaching,1.01,0.459,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.1,simulation,17d6f423f8be,2026-11-10T14:39:15+00:00,True,False
+wolf,0.799,left,same,-0.8,0.457,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.0,simulation,7440e0ed4a62,2026-11-10T15:29:51+00:00,False,False
+bear,0.691,down,approaching,0.0,0.446,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.8,simulation,5497a54b3b83,2026-11-10T16:18:36+00:00,False,False
+deer,0.751,unknown,unknown,0.0,0.353,False,can't tell yet which way the deer is going,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.3,simulation,8b896872d96b,2026-11-10T17:03:51+00:00,False,False
+fox,0.823,right,approaching,1.02,0.332,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.1,simulation,d563c887417c,2026-11-10T17:19:12+00:00,True,False
+bear,0.708,left,same,-0.75,0.214,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.0,simulation,d8aed978673a,2026-11-10T17:40:41+00:00,False,False
+deer,0.602,up,same,0.0,0.651,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.1,simulation,2eb5ab9f4430,2026-11-10T18:14:49+00:00,False,False
+deer,0.425,still,leaving,0.0,0.893,False,only 42% sure it is a deer (need 60%),none,not_a_threat,False,,0,unknown,unknown,crops,right,-9.9,simulation,06f5f6111cf2,2026-11-10T18:22:05+00:00,False,False
+bear,0.704,right,same,0.71,0.581,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.3,simulation,d8b65a1967d0,2026-11-10T19:35:26+00:00,True,False
+wolf,0.793,right,leaving,0.84,0.584,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.0,simulation,5a0928215db0,2026-11-10T23:27:12+00:00,True,False
+wolf,0.916,still,approaching,0.0,0.297,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,,simulation,afe98fdf6614,2026-11-11T01:27:12+00:00,False,False
+deer,0.674,down,approaching,0.0,0.329,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,,simulation,cab392845dae,2026-11-11T03:33:48+00:00,False,False
+fox,0.808,left,approaching,-0.57,0.365,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.0,simulation,376f89d33078,2026-11-11T04:23:05+00:00,False,False
+deer,0.752,still,approaching,0.0,0.78,True,"deer is inside the protected area; light works best on deer so far (chance it leaves: none 10%, sound 57%, light 68%)",light,left,True,3.6,4,left,leaving,crops,right,-2.1,simulation,9eeb1c14df92,2026-11-11T04:50:06+00:00,False,False
+bear,0.798,still,approaching,0.0,0.528,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.8,simulation,47cdb74c990a,2026-11-11T05:37:03+00:00,False,False
+deer,0.915,right,approaching,1.03,0.498,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 10%, sound 57%, light 69%)",sound,entered,False,,2,right,same,crops,right,-8.0,simulation,c0518e48e488,2026-11-11T07:56:10+00:00,True,False
+deer,0.926,still,approaching,0.0,0.878,True,"deer is inside the protected area; light works best on deer so far (chance it leaves: none 10%, sound 54%, light 69%)",light,entered,False,,12,still,same,crops,right,-7.6,simulation,bb20916b2b37,2026-11-11T08:58:23+00:00,False,False
+deer,0.807,down,approaching,0.0,0.33,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.3,simulation,91e036e53725,2026-11-11T10:02:22+00:00,False,False
+wolf,0.584,left,same,-0.57,0.144,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.0,simulation,90154b717794,2026-11-11T12:21:21+00:00,False,False
+deer,0.969,left,leaving,-0.88,0.508,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.7,simulation,ab9944a23f65,2026-11-11T13:21:23+00:00,False,False
+fox,0.883,still,same,0.0,0.279,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.2,simulation,21f38e449800,2026-11-11T13:54:40+00:00,False,False
+deer,0.83,right,approaching,0.63,0.474,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 10%, sound 54%, light 66%)",light,stayed,False,,12,still,approaching,crops,right,-6.0,simulation,c81319f900d3,2026-11-11T15:35:10+00:00,True,False
+deer,0.749,still,same,0.0,0.462,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-9.0,simulation,18af4382ad47,2026-11-11T17:05:29+00:00,False,False
+deer,0.777,left,approaching,-0.52,0.276,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.7,simulation,6fa1f472bb69,2026-11-11T19:12:30+00:00,False,False
+fox,0.97,right,same,0.89,0.641,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.5,simulation,1b252bd8af21,2026-11-11T19:21:26+00:00,True,False
+fox,0.882,right,approaching,0.85,0.445,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.8,simulation,0f78af3e7dd9,2026-11-11T20:35:20+00:00,True,False
+deer,0.847,still,same,0.0,0.495,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-10.5,simulation,5b33c2553659,2026-11-11T20:59:02+00:00,False,False
+deer,0.69,right,approaching,0.69,0.496,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 10%, sound 54%, light 63%)",light,left,True,3.6,4,left,leaving,crops,right,-2.9,simulation,cd64b8ec796e,2026-11-11T21:33:02+00:00,True,True
+bear,0.767,left,approaching,-0.7,0.144,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.3,simulation,a55c2f7c9cc7,2026-11-11T21:48:34+00:00,False,False
+fox,0.778,right,leaving,0.87,0.435,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.4,simulation,1b37a14d59fc,2026-11-11T21:57:58+00:00,True,False
+deer,0.832,right,approaching,0.69,0.331,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 10%, sound 54%, light 65%)",sound,left,True,1.8,3,unknown,unknown,crops,right,-4.9,simulation,504481b2499e,2026-11-11T22:23:28+00:00,True,False
+bear,0.727,right,same,0.48,0.28,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.7,simulation,968e46db73ab,2026-11-11T22:53:40+00:00,True,False
+bear,0.755,right,same,0.57,0.364,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-1.2,simulation,105cd65f45b6,2026-11-11T22:59:34+00:00,True,False
+fox,0.746,right,approaching,0.73,0.277,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.4,simulation,ee8b4a815857,2026-11-12T01:57:55+00:00,True,False
+fox,0.785,right,approaching,0.83,0.295,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.1,simulation,29505089be3b,2026-11-12T02:31:29+00:00,True,False
+bear,0.873,right,same,0.48,0.369,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-10.0,simulation,419142c79c1c,2026-11-12T02:58:22+00:00,True,False
+fox,0.853,right,same,0.51,0.224,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.8,simulation,038d1018d7f5,2026-11-12T04:32:02+00:00,True,False
+fox,0.742,up,same,0.0,0.417,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.5,simulation,ddd269616452,2026-11-12T04:49:51+00:00,False,False
+wolf,0.85,right,leaving,0.57,0.478,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.1,simulation,e7a8e5e6df0c,2026-11-12T13:25:19+00:00,True,False
+wolf,0.771,right,same,0.61,0.364,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,,simulation,41cdc6db0211,2026-11-12T14:33:43+00:00,True,False
+deer,0.801,unknown,unknown,0.0,0.204,False,can't tell yet which way the deer is going,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.0,simulation,f7266a1e860d,2026-11-12T14:34:14+00:00,False,False
+fox,0.821,right,approaching,0.73,0.287,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.9,simulation,0eab03f33851,2026-11-12T14:44:52+00:00,True,False
+deer,0.666,right,approaching,0.98,0.505,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 10%, sound 57%, light 65%)",light,left,True,3.6,4,left,leaving,crops,right,-8.5,simulation,3c3718b0f10e,2026-11-12T15:19:12+00:00,True,True
+fox,0.915,left,same,-0.67,0.3,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.1,simulation,4f5605e1ddfb,2026-11-12T15:30:51+00:00,False,False
+fox,0.846,down,leaving,0.0,0.249,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.9,simulation,18071f7e4273,2026-11-12T15:36:19+00:00,False,False
+deer,0.884,unknown,unknown,0.0,0.5,False,can't tell yet which way the deer is going,none,not_a_threat,False,,0,unknown,unknown,crops,right,-9.1,simulation,8fa9af925385,2026-11-12T16:10:07+00:00,False,False
+bear,0.85,left,approaching,-0.56,0.2,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.5,simulation,fcf293944318,2026-11-12T18:37:19+00:00,False,False
+deer,0.758,right,same,0.68,0.226,True,"deer is heading for the protected area; control trial: no deterrent, to measure what happens without one",none,left,True,9.0,7,left,leaving,crops,right,-5.7,simulation,db81efa4f9f1,2026-11-12T19:04:36+00:00,True,True
+deer,0.648,left,approaching,-1.04,0.066,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.8,simulation,50a259adb533,2026-11-12T19:15:25+00:00,False,False
+fox,0.493,left,same,-0.58,0.582,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.5,simulation,74bfc79e23da,2026-11-12T19:46:41+00:00,False,False
+fox,0.676,still,approaching,0.0,0.905,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-9.4,simulation,a02f9b751151,2026-11-12T20:09:19+00:00,False,False
+deer,0.835,still,leaving,0.0,0.503,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.0,simulation,b6d6a79b8a2e,2026-11-12T21:04:48+00:00,False,False
+fox,0.867,left,approaching,-0.48,0.537,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.3,simulation,09bb9d7a21cb,2026-11-12T21:29:53+00:00,False,False
+fox,0.734,still,approaching,0.0,0.86,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.7,simulation,6779ecbc0534,2026-11-13T04:27:55+00:00,False,False
+deer,0.829,right,same,0.68,0.48,True,"deer is heading for the protected area; control trial: no deterrent, to measure what happens without one",none,left,True,10.8,8,left,leaving,crops,right,-6.2,simulation,9b9750e98d6d,2026-11-13T05:26:56+00:00,True,True
+fox,0.732,right,approaching,1.03,0.541,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.7,simulation,98143733ef91,2026-11-13T06:16:26+00:00,True,False
+fox,0.844,left,approaching,-0.83,0.441,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.5,simulation,6d16767187fd,2026-11-13T06:51:30+00:00,False,False
+fox,0.678,left,approaching,-0.8,0.535,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.2,simulation,ad09faa7176f,2026-11-13T07:48:55+00:00,False,False
+deer,0.875,right,approaching,0.98,0.468,True,"deer is heading for the protected area; re-testing sound on deer, in case things changed (chance it leaves: none 26%, sound 57%, light 66%)",sound,entered,False,,2,right,same,crops,right,-4.2,simulation,1e93e0df084e,2026-11-13T11:31:00+00:00,True,False
+fox,0.724,right,approaching,0.62,0.631,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.0,simulation,5fc8afbc11c4,2026-11-13T12:52:26+00:00,True,False
+deer,0.599,right,same,0.53,0.49,False,only 59% sure it is a deer (need 60%),none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.8,simulation,8052dc7e351e,2026-11-13T14:10:09+00:00,True,False
+fox,0.729,right,approaching,0.54,0.254,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.4,simulation,f96aae7078ea,2026-11-13T14:13:37+00:00,True,False
+fox,0.846,right,leaving,0.47,0.409,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.9,simulation,4067ec79b3be,2026-11-13T14:56:33+00:00,True,False
+deer,0.698,right,same,0.51,0.565,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 26%, sound 54%, light 66%)",light,entered,False,,2,right,approaching,crops,right,-3.4,simulation,4ab863989ab9,2026-11-13T15:01:04+00:00,True,False
+deer,0.83,left,approaching,-0.8,0.537,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-9.4,simulation,d11af272c2ef,2026-11-13T16:00:53+00:00,False,False
+deer,0.841,right,approaching,0.81,0.364,True,"deer is heading for the protected area; control trial: no deterrent, to measure what happens without one",none,entered,False,,2,right,same,crops,right,-9.2,simulation,0ec05b37a699,2026-11-13T17:29:35+00:00,True,False
+deer,0.785,left,same,-0.73,0.276,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.5,simulation,b715bc42513d,2026-11-13T17:56:34+00:00,False,False
+fox,0.724,right,approaching,0.9,0.562,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.3,simulation,e0df6fce4808,2026-11-13T18:06:51+00:00,True,False
+fox,0.681,left,approaching,-0.8,0.435,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.0,simulation,480b060ecc8a,2026-11-13T19:55:45+00:00,False,False
+deer,0.903,left,same,-0.73,0.287,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.4,simulation,549eb1ff38d8,2026-11-14T01:16:01+00:00,False,False
+fox,0.77,right,same,0.87,0.279,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.6,simulation,ba244a205268,2026-11-14T01:27:46+00:00,True,False
+fox,0.705,right,approaching,0.64,0.339,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.3,simulation,c4e7f5521d62,2026-11-14T03:54:20+00:00,True,False
+wolf,0.864,right,same,0.48,0.319,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-9.4,simulation,ea75ccc284da,2026-11-14T04:11:08+00:00,True,False
+deer,0.97,right,same,0.74,0.54,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 24%, sound 54%, light 63%)",light,left,True,3.6,4,left,leaving,crops,right,-6.7,simulation,4c041f500d19,2026-11-14T07:23:52+00:00,True,True
+wolf,0.756,left,same,-0.91,0.333,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.3,simulation,6aa8c494a9bc,2026-11-14T10:57:43+00:00,False,False
+deer,0.95,down,approaching,0.0,0.666,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-4.5,simulation,95ea51a248ee,2026-11-14T13:22:43+00:00,False,False
+fox,0.803,right,approaching,0.49,0.251,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-2.8,simulation,0530e7286b1b,2026-11-14T13:31:51+00:00,True,False
+deer,0.82,left,approaching,-0.89,0.185,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.9,simulation,f4f08acaca45,2026-11-14T14:03:28+00:00,False,False
+wolf,0.84,right,same,0.6,0.284,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-5.9,simulation,328b57ad057d,2026-11-14T14:05:24+00:00,True,False
+fox,0.817,right,same,0.42,0.393,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.4,simulation,0e5f8f94b50b,2026-11-14T14:05:55+00:00,True,False
+wolf,0.793,right,approaching,0.71,0.597,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-7.3,simulation,ff44b8bfe77a,2026-11-14T14:22:20+00:00,True,False
+deer,0.656,right,same,0.67,0.368,True,"deer is heading for the protected area; light works best on deer so far (chance it leaves: none 24%, sound 54%, light 65%)",light,left,True,1.8,3,left,leaving,crops,right,-6.7,simulation,29801cd33258,2026-11-14T14:26:41+00:00,True,True
+fox,0.729,left,leaving,-0.53,0.402,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-3.4,simulation,1f689e74d650,2026-11-14T14:54:54+00:00,False,False
+fox,0.97,right,same,0.94,0.318,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.2,simulation,098d1e47caa6,2026-11-14T15:32:52+00:00,True,False
+fox,0.712,left,approaching,-1.01,0.312,False,fox is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.4,simulation,85c8202cb15a,2026-11-14T15:38:41+00:00,False,False
+wolf,0.8,left,same,-0.87,0.124,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,,simulation,98d15aa26879,2026-11-14T16:31:25+00:00,False,False
+bear,0.816,left,approaching,-0.46,0.175,False,bear is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.3,simulation,f92aa5dc5896,2026-11-14T16:32:43+00:00,False,False
+deer,0.719,down,approaching,0.0,0.397,False,deer is not heading for the protected area,none,not_a_threat,False,,0,unknown,unknown,crops,right,-6.2,simulation,4d5fa7e27f8c,2026-11-14T20:31:44+00:00,False,False
+wolf,0.773,left,approaching,-0.41,0.561,False,wolf is not deterred in the 'crops' scenario,none,not_a_threat,False,,0,unknown,unknown,crops,right,-8.0,simulation,6cbd075f0e1d,2026-11-14T21:12:41+00:00,False,False

@@ -1,0 +1,53 @@
+# How the device behaves. To adapt it to a new site, edit this file; no code changes needed.
+# (Which animals the camera can recognise is set in vision/config.yaml.)
+
+# ---- What are we protecting? -------------------------------------------------
+# Pick one of the scenarios below, or add your own. Animals on the "deter" list
+# get a response; every other animal is logged and left alone.
+scenario: crops
+
+scenarios:
+  crops:
+    description: Keep grazers out of fields and gardens. Predators pass freely.
+    deter: [deer]
+  livestock:
+    description: Keep predators away from farm animals. Deer pass freely.
+    deter: [fox, wolf, bear]
+  road:
+    description: Keep all wildlife off a road or railway.
+    deter: [fox, wolf, bear, deer]
+
+# ---- Where is the protected area in the camera view? ---------------------------
+critical_area:
+  side: right     # left or right
+  width: 0.25     # share of the view, counted from that edge, that IS the protected area.
+                  # Use 0 if the area lies beyond the edge of the view.
+
+# ---- When to react -----------------------------------------------------------
+# An animal is a threat when it is on the scenario's deter list, the detector is
+# at least this sure, and it is heading for (or already inside) the protected area.
+min_confidence: 0.6   # tune once the model is trained on the minis
+
+# ---- What to react with ------------------------------------------------------
+deterrents: [sound, light]   # "none" is always an option as well
+
+# ---- Learning ----------------------------------------------------------------
+learning:
+  control_share: 0.1   # 1 in 10 threats gets no deterrent on purpose, so we keep
+                       # measuring what animals do when we do nothing
+  memory: 0.97         # below 1: older results slowly count less, so the device notices
+                       # animals getting used to a deterrent. 1 = never forget.
+
+# ---- Checking whether it worked ----------------------------------------------
+follow_up:
+  check_every_s: 1      # after responding, pause this long between looks...
+  give_up_after_s: 20   # ...until the animal is gone, or this much time has passed
+  empty_looks_before_gone: 2   # this many looks in a row without the animal = it is gone.
+                               # Raise it if the detector sometimes loses an animal that is still there.
+  min_confidence: 0.25  # while following an animal we already identified, a sighting this
+                        # unsure still counts as "it is still there"
+
+# ---- Photos per look ---------------------------------------------------------
+burst:
+  frames: 3
+  gap_s: 0.4

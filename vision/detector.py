@@ -38,6 +38,7 @@ class Detection:
     w: float  # box size, pixels
     h: float
     at_edge: bool = False  # box touches the image border, so it's probably cut off
+    position: float = 0.5  # where the box centre is across the view: 0 = left edge, 1 = right edge
 
     @property
     def size(self) -> float:
@@ -54,6 +55,7 @@ class Animal:
     approach: str                 # approaching / leaving / same / unknown
     dx: float                     # movement first->last sighting, in body lengths (+ = right)
     dy: float                     # (+ = down)
+    position: float = 0.5         # where it was last seen across the view: 0 = left edge, 1 = right edge
     boxes: list[Detection | None] = field(repr=False, default_factory=list)  # one entry per frame
 
 
@@ -85,22 +87,42 @@ class AnimalDetector:
     def detect(self, frame) -> list[Detection]:
         return self.detect_many([frame])[0]
 
-    def detect_many(self, frames) -> list[list[Detection]]:
+    def detect_many(self, frames, conf: float | None = None) -> list[list[Detection]]:
+        """`conf` overrides the confidence cut-off for this call only."""
+        conf = self.conf if conf is None else conf
         out = []
-        for r in self.model.predict(list(frames), imgsz=self.imgsz, conf=self.conf, verbose=False, stream=True):
+        for r in self.model.predict(list(frames), imgsz=self.imgsz, conf=conf, verbose=False, stream=True):
             H, W = r.orig_shape
             dets = []
             for c, p, (x, y, w, h) in zip(r.boxes.cls, r.boxes.conf, r.boxes.xywh.tolist()):
                 edge = x - w / 2 <= 2 or y - h / 2 <= 2 or x + w / 2 >= W - 2 or y + h / 2 >= H - 2
-                dets.append(Detection(r.names[int(c)], float(p), x, y, w, h, edge))
-            out.append([d for d in dets if self.only is None or d.name in self.only])
+                dets.append(Detection(r.names[int(c)], float(p), x, y, w, h, edge, x / W))
+            dets = [d for d in dets if self.only is None or d.name in self.only]
+            out.append(self._drop_duplicates(dets))
         return out
+
+    @staticmethod
+    def _drop_duplicates(dets: list[Detection]) -> list[Detection]:
+        """The model sometimes puts two boxes with different names on the same animal
+        (fox AND wolf). Keep only the more confident one, or it would count as two animals."""
+        kept: list[Detection] = []
+        for d in sorted(dets, key=lambda d: -d.conf):
+            for k in kept:
+                ix = max(0.0, min(d.x + d.w / 2, k.x + k.w / 2) - max(d.x - d.w / 2, k.x - k.w / 2))
+                iy = max(0.0, min(d.y + d.h / 2, k.y + k.h / 2) - max(d.y - d.h / 2, k.y - k.h / 2))
+                if ix * iy > 0.6 * min(d.w * d.h, k.w * k.h):
+                    break
+            else:
+                kept.append(d)
+        return kept
 
     # ---- bursts --------------------------------------------------------
 
-    def analyze_burst(self, frames) -> list[Animal]:
-        """Detect in every frame, link detections into animals, and compute their movement."""
-        per_frame = self.detect_many(frames)
+    def analyze_burst(self, frames, conf: float | None = None) -> list[Animal]:
+        """Detect in every frame, link detections into animals, and compute their movement.
+        `conf` overrides the confidence cut-off for this call, e.g. lower while you are following
+        an animal you already identified: a weak sighting still tells you it hasn't left."""
+        per_frame = self.detect_many(frames, conf)
         tracks: list[list[Detection | None]] = []
 
         for i, dets in enumerate(per_frame):
@@ -110,7 +132,10 @@ class AnimalDetector:
                 last = next(d for d in reversed(t) if d is not None)
                 for di, d in enumerate(dets):
                     dist = ((d.x - last.x) ** 2 + (d.y - last.y) ** 2) ** 0.5 / max(last.size, 1.0)
-                    if dist <= self.max_jump:
+                    # same animal = close by AND roughly the same size (unless cut off by the border);
+                    # otherwise a leaving animal gets linked to some other object in view
+                    similar = d.at_edge or last.at_edge or 0.5 <= d.size / max(last.size, 1.0) <= 2.0
+                    if dist <= self.max_jump and similar:
                         pairs.append((dist, ti, di))
             used_t, used_d = set(), set()
             for _, ti, di in sorted(pairs):
@@ -137,11 +162,11 @@ class AnimalDetector:
 
     def _summarise(self, track: list[Detection | None]) -> Animal:
         seen = [d for d in track if d is not None]
-        names = [d.name for d in seen]
-        name = max(set(names), key=names.count)
+        # the name with the most total confidence wins (sorted first, so ties never depend on chance)
+        name = max(sorted({d.name for d in seen}), key=lambda n: sum(d.conf for d in seen if d.name == n))
         conf = sum(d.conf for d in seen) / len(seen)
         if len(seen) < 2:
-            return Animal(name, conf, 1, "unknown", "unknown", 0.0, 0.0, track)
+            return Animal(name, conf, 1, "unknown", "unknown", 0.0, 0.0, seen[0].position, track)
 
         first, last = seen[0], seen[-1]
         body = sum(d.size for d in seen) / len(seen)
@@ -160,5 +185,5 @@ class AnimalDetector:
             approach = "approaching" if growth > 1.25 else "leaving" if growth < 0.8 else "same"
         else:
             approach = "unknown"
-        return Animal(name, conf, len(seen), direction, approach, round(dx, 2), round(dy, 2), track)
+        return Animal(name, conf, len(seen), direction, approach, round(dx, 2), round(dy, 2), last.position, track)
 
