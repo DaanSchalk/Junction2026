@@ -35,7 +35,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Literal, get_args
 
-Animal = Literal["fox", "bear", "wolf", "moose"]  # the 3D-printed minis
+Animal = Literal["fox", "bear", "wolf", "deer"]  # the 3D-printed minis
 Deterrent = Literal["none", "sound", "light"]     # "none" is the control group - keep it
 Direction = Literal["left", "right", "up", "down", "still", "unknown"]  # as seen in the image
 Approach = Literal["approaching", "leaving", "same", "unknown"]       # box growing / shrinking
