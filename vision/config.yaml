@@ -4,12 +4,13 @@
 # The animals you want to detect. The ORDER matters: the position in this list
 # is the class id written in the label files. Add new classes at the END;
 # reordering or removing one means re-labelling.
-# These are placeholders that match the example images - replace with yours,
-# e.g. [fox, heron, cat, marten, deer].
+# These are the 3D-printed minis. (For the COCO example images in
+# get_example_images.py, temporarily use [bird, cat, dog].)
 classes:
-  - bird
-  - cat
-  - dog
+  - fox
+  - bear
+  - wolf
+  - moose
 
 # Image size used for training AND on the UNO Q. Smaller = faster, less accurate.
 # 320 is a good start on the UNO Q; try 416 if animals are small in the frame.

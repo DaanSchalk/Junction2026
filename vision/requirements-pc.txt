@@ -2,6 +2,7 @@
 ultralytics>=8.4.0
 opencv-python
 pyyaml
+flask           # collect.py
 ncnn            # NCNN export for the UNO Q
 pnnx            # needed by the NCNN export
 git+https://github.com/ultralytics/CLIP.git   # text prompts for YOLOE in prelabel.py (needs git)

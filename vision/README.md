@@ -8,6 +8,7 @@ The motion sensor, deterrent and microcontroller logic are up to you.
 | File | Runs on | What it does |
 |---|---|---|
 | `config.yaml` | – | **Your class list** and image size. Every script reads this. |
+| `collect.py` | UNO Q / laptop | **Browser app for the minis**: pick the mini, press Capture, and the box is drawn for you |
 | `capture.py` | UNO Q / laptop | Takes photos when something moves (or every N seconds) |
 | `get_example_images.py` | PC | Downloads ~15 public animal photos so you can test the pipeline today |
 | `prelabel.py` | PC | Draws boxes automatically (YOLOE-26, works for any animal name) |
@@ -44,6 +45,8 @@ ls /dev/video*            # your USB camera should show up as /dev/video0
 
 ## Try the whole pipeline in 5 minutes (example photos)
 
+The example photos are birds, cats and dogs, so temporarily set `classes: [bird, cat, dog]` in `config.yaml` for this.
+
 ```bash
 python get_example_images.py          # ~15 COCO photos of birds/cats/dogs
 python prelabel.py --preview          # auto boxes; look at data/raw/preview/
@@ -52,7 +55,26 @@ python train.py --epochs 3            # just to see it work; the model will be b
 python try_detector.py --images data/raw/images
 ```
 
-## The real workflow
+## Collecting the minis (the quick way)
+
+```bash
+python collect.py            # on the UNO Q, or a laptop with the camera plugged in
+```
+Then open `http://<ip-of-that-machine>:8000` in a browser (`hostname -I` on the board shows the IP).
+
+1. Clear the scene and press **Set empty background** (`B`).
+2. Pick the mini (`1`–`4`), put it in the scene, keep your hands out of view, and press **Capture** (`Space`).
+   The app compares the photo with the empty background and draws the box itself.
+3. Look at the photo. If the box is wrong, drag a new one over it. A red photo has no box yet, so drag one.
+   Use **no animal** or **delete** for bad shots.
+4. Move or rotate the mini and capture again. Also vary the distance, the spot and the light. Re-set the background whenever the light changes.
+5. Take a few **empty scene** (`0`) shots too.
+
+The counters on the buttons show how many photos each mini has. Aim for 50+ each.
+When there's enough, copy `data/raw/` to the PC and continue at step 5 below (split and train).
+Boxes include the mini's shadow when it's strong. That's fine for a demo; for better results, redraw them.
+
+## The real workflow (real animals or more control)
 
 1. **Set your animals** in `config.yaml` (`classes:`). Use plain English names
    (`fox`, `heron`, `wild boar`). `prelabel.py` uses them as search prompts.
