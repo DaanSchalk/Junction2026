@@ -1,6 +1,7 @@
-# Running the detector on the Arduino UNO Q (Debian, aarch64)
-ultralytics>=8.4.0
+# Running on the Arduino UNO Q (Debian, aarch64).
+# Light on purpose: the NCNN model runs without PyTorch or Ultralytics.
+numpy
 opencv-python-headless
 pyyaml
-flask           # collect.py
 ncnn
+# flask         # only for collect.py (taking training photos on the board)

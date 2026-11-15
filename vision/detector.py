@@ -24,9 +24,76 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from ultralytics import YOLO
+import numpy as np
+import yaml
 
 from common import ROOT, load_config
+
+
+class NcnnModel:
+    """Runs an exported NCNN model (a folder with model.ncnn.param + model.ncnn.bin) with only
+    ncnn, numpy and OpenCV: no PyTorch, no Ultralytics. That keeps start-up fast on the UNO Q.
+    Gives the same boxes as Ultralytics for the same model (checked on all 66 training photos)."""
+
+    def __init__(self, folder: Path, threads: int = 4):
+        import ncnn  # pip install ncnn
+        meta = yaml.safe_load((folder / "metadata.yaml").read_text())
+        self.names = {int(k): v for k, v in meta["names"].items()}
+        size = meta.get("imgsz", 320)
+        self.size = int(size[0] if isinstance(size, (list, tuple)) else size)
+        self.ncnn = ncnn
+        self.net = ncnn.Net()
+        self.net.opt.use_vulkan_compute = False
+        self.net.opt.num_threads = threads
+        param = next(folder.glob("*.param"))
+        self.net.load_param(str(param))
+        self.net.load_model(str(param.with_suffix(".bin")))
+        self.input_name, self.output_name = self.net.input_names()[0], self.net.output_names()[0]
+
+    def __call__(self, frame, conf: float, iou: float = 0.7):
+        """One BGR frame -> list of (class_id, confidence, x_centre, y_centre, w, h) in pixels."""
+        import cv2
+        H, W = frame.shape[:2]
+        S = self.size
+        r = min(S / H, S / W)
+        nh, nw = int(round(H * r)), int(round(W * r))
+        top, left = int(round((S - nh) / 2 - 0.1)), int(round((S - nw) / 2 - 0.1))
+        canvas = np.full((S, S, 3), 114, np.uint8)
+        canvas[top:top + nh, left:left + nw] = cv2.resize(frame, (nw, nh), interpolation=cv2.INTER_LINEAR)
+        # keep a reference to the array: ncnn.Mat does not copy it
+        x = np.ascontiguousarray(canvas[:, :, ::-1].transpose(2, 0, 1), dtype=np.float32) / 255.0
+        with self.net.create_extractor() as ex:
+            ex.input(self.input_name, self.ncnn.Mat(x))
+            out = np.array(ex.extract(self.output_name)[1])     # (4 + classes, candidates)
+        boxes, scores = out[:4].T, out[4:].T
+        cls = scores.argmax(1)
+        best = scores[np.arange(len(cls)), cls]
+        keep = best >= conf
+        boxes, cls, best = boxes[keep], cls[keep], best[keep]
+        if not len(best):
+            return []
+        # centre/size in the padded square -> corners in the original frame
+        xyxy = np.stack([boxes[:, 0] - boxes[:, 2] / 2, boxes[:, 1] - boxes[:, 3] / 2,
+                         boxes[:, 0] + boxes[:, 2] / 2, boxes[:, 1] + boxes[:, 3] / 2], 1)
+        xyxy[:, [0, 2]] = ((xyxy[:, [0, 2]] - left) / r).clip(0, W)
+        xyxy[:, [1, 3]] = ((xyxy[:, [1, 3]] - top) / r).clip(0, H)
+        out = []
+        for c in np.unique(cls):                                 # non-maximum suppression per class
+            idx = np.where(cls == c)[0]
+            idx = idx[np.argsort(-best[idx])]
+            while len(idx):
+                i, idx = idx[0], idx[1:]
+                x1, y1, x2, y2 = xyxy[i]
+                x1, y1, x2, y2 = (float(v) for v in (x1, y1, x2, y2))   # plain floats: the log is JSON
+                out.append((int(c), float(best[i]), (x1 + x2) / 2, (y1 + y2) / 2, x2 - x1, y2 - y1))
+                if len(idx):
+                    o = xyxy[idx]
+                    iw = (np.minimum(x2, o[:, 2]) - np.maximum(x1, o[:, 0])).clip(0)
+                    ih = (np.minimum(y2, o[:, 3]) - np.maximum(y1, o[:, 1])).clip(0)
+                    inter = iw * ih
+                    union = (x2 - x1) * (y2 - y1) + (o[:, 2] - o[:, 0]) * (o[:, 3] - o[:, 1]) - inter
+                    idx = idx[inter / np.maximum(union, 1e-9) <= iou]
+        return sorted(out, key=lambda d: -d[1])
 
 
 @dataclass
@@ -75,7 +142,11 @@ class AnimalDetector:
             model = ROOT / model
         if not model.exists() and model.suffix != ".pt":
             raise FileNotFoundError(f"No model at {model}. Train one (train.py) or use AnimalDetector('yolo26n.pt').")
-        self.model = YOLO(str(model), task="detect")
+        if model.is_dir() and any(model.glob("*.ncnn.param")):
+            self.model = NcnnModel(model)      # light path: no PyTorch/Ultralytics needed (UNO Q)
+        else:
+            from ultralytics import YOLO       # .pt or other formats: needs the full Ultralytics install
+            self.model = YOLO(str(model), task="detect")
         self.conf = conf
         self.imgsz = imgsz or cfg["imgsz"]
         self.only = set(only) if only else None
@@ -91,15 +162,26 @@ class AnimalDetector:
         """`conf` overrides the confidence cut-off for this call only."""
         conf = self.conf if conf is None else conf
         out = []
-        for r in self.model.predict(list(frames), imgsz=self.imgsz, conf=conf, verbose=False, stream=True):
-            H, W = r.orig_shape
+        for names, (H, W), raw in self._raw(frames, conf):
             dets = []
-            for c, p, (x, y, w, h) in zip(r.boxes.cls, r.boxes.conf, r.boxes.xywh.tolist()):
+            for c, p, x, y, w, h in raw:
                 edge = x - w / 2 <= 2 or y - h / 2 <= 2 or x + w / 2 >= W - 2 or y + h / 2 >= H - 2
-                dets.append(Detection(r.names[int(c)], float(p), x, y, w, h, edge, x / W))
+                dets.append(Detection(names[int(c)], float(p), x, y, w, h, edge, x / W))
             dets = [d for d in dets if self.only is None or d.name in self.only]
             out.append(self._drop_duplicates(dets))
         return out
+
+    def _raw(self, frames, conf):
+        """(class names, (height, width), [(class, conf, x, y, w, h), ...]) per frame."""
+        if isinstance(self.model, NcnnModel):
+            import cv2
+            for f in frames:
+                img = cv2.imread(str(f)) if isinstance(f, (str, Path)) else f
+                yield self.model.names, img.shape[:2], self.model(img, conf)
+            return
+        for r in self.model.predict(list(frames), imgsz=self.imgsz, conf=conf, verbose=False, stream=True):
+            yield r.names, r.orig_shape, [(int(c), float(p), *b) for c, p, b in
+                                          zip(r.boxes.cls, r.boxes.conf, r.boxes.xywh.tolist())]
 
     @staticmethod
     def _drop_duplicates(dets: list[Detection]) -> list[Detection]:
